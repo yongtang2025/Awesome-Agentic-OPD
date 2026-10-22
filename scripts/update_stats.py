@@ -159,7 +159,7 @@ def build_readme(src, stats):
     w('<h1 align="center">Awesome Agentic On-Policy Distillation</h1>')
     w("")
     w('<p align="center">Papers, benchmarks, datasets and codebases for <b>Agentic OPD / OPSD</b> —<br>'
-      'organized by language, multimodal, video, audio and generative agents.</p>')
+      'organized by language, multimodal, video, audio and Agentic Generative Systems.</p>')
     w("")
     w('<p align="center">')
     w(f'  <a href="{pages}"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>')
@@ -195,7 +195,8 @@ def build_readme(src, stats):
         plain = sorted([p for p in ps if not p.get("repo")], key=lambda p: (date(p), p["id"]), reverse=True)
         w(f'<h2 id="{c["key"]}">{c["title"]}</h2>')
         w("")
-        w(f"{c['desc']} **{len(ps)} papers**, {len(coded)} with code.")
+        noun = "paper" if len(ps) == 1 else "papers"
+        w(f"{c['desc']} **{len(ps)} {noun}**, {len(coded)} with code.")
         w("")
         # Keep the five-column layout visible even before the first paper is added.
         if coded or not plain:

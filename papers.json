@@ -37,12 +37,12 @@
    "desc_zh": "面向语音、音频语言和语音交互智能体的在策略蒸馏。"
   },
   {
-   "key": "agentic-generative-opd",
-   "short": "Generative",
-   "title": "🎨 Agentic Generative OPD",
-   "title_zh": "🎨 Agentic Generative OPD",
-   "desc": "Agentic on-policy distillation for image, video, 3D and other generative models with iterative or interactive behavior.",
-   "desc_zh": "面向图像、视频、3D 及其他具有迭代或交互行为的生成模型的 Agentic OPD。"
+   "key": "ags-opd",
+   "short": "AGS",
+   "title": "🎨 Agentic Generative Systems (AGS) OPD",
+   "title_zh": "🎨 Agentic Generative Systems (AGS) OPD",
+   "desc": "On-policy distillation for Agentic Generative Systems that plan toward goals, execute generation tools and refine outputs from feedback; generic iterative diffusion distillation is excluded.",
+   "desc_zh": "面向 Agentic Generative Systems（AGS）的在策略蒸馏：系统围绕目标规划、调用生成工具，并依据反馈迭代改进输出；不纳入仅有迭代扩散蒸馏的工作。"
   }
  ],
  "papers": [
@@ -663,7 +663,7 @@
   },
   {
    "id": "2605.21605",
-   "category": "agentic-generative-opd",
+   "category": "ags-opd",
    "sub": "",
    "title": "GenEvolve: Self-Evolving Image Generation Agents via Tool-Orchestrated Visual Experience Distillation",
    "venue": "arXiv 2026",
@@ -675,81 +675,6 @@
    "q4": "Tool coverage and trajectory comparison quality affect self-evolution.",
    "affiliation": "HKUST (GZ); Meituan; HKUST; National University of Singapore",
    "date": "2026-05-20"
-  },
-  {
-   "id": "2606.25473",
-   "category": "agentic-generative-opd",
-   "sub": "",
-   "title": "Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models",
-   "venue": "arXiv 2026",
-   "repo": "NVlabs/rcm",
-   "strict": "OPD/ self-forcing",
-   "q1": "Autoregressive video diffusion and interactive world models need few-step, long-horizon generation without compounding rollout errors.",
-   "q2": "Causal-rCM combines teacher-forcing initialization with self-forcing on-policy refinement and applies the recipe to action-conditioned interactive world models.",
-   "q3": "Streaming video generation and Cosmos-based interactive world-model experiments.",
-   "q4": "The recipe targets diffusion trajectories and may not transfer directly to language or physical control policies.",
-   "affiliation": "Tsinghua University; UT Austin; NVIDIA",
-   "date": "2026-06-24"
-  },
-  {
-   "id": "2609.07137",
-   "category": "agentic-generative-opd",
-   "sub": "",
-   "title": "Flow3D-OPD: Multi-Teacher On-Policy Distillation for 3D Geometry Generation with Flow-Matching Diffusion Transformer",
-   "venue": "arXiv 2026",
-   "repo": null,
-   "strict": "OPD+verifier",
-   "q1": "3D generation lacks comprehensive rewards and suffers gradient interference when heterogeneous geometric objectives are optimized together.",
-   "q2": "Flow3D-OPD trains specialist teachers with an agentic 3D verifier, then consolidates them through routed on-policy distillation.",
-   "q3": "Image-to-3D geometry generation across multiple quality dimensions.",
-   "q4": "Verifier quality and task-routing coverage govern the resulting geometric expertise.",
-   "affiliation": "Shanghai Jiao Tong University; Zhejiang Normal University; Shandong Normal University; Tencent Hunyuan3D",
-   "date": "2026-09-07"
-  },
-  {
-   "id": "2607.08766",
-   "category": "agentic-generative-opd",
-   "sub": "",
-   "title": "OPSD-V: On-Policy Self-Distillation for Post-Training Few-Step Autoregressive Video Generators",
-   "venue": "arXiv 2026",
-   "repo": "MeiGen-AI/OPSD-V",
-   "strict": "OPSD",
-   "q1": "Few-step autoregressive video generators accumulate errors and lose motion quality during long rollout.",
-   "q2": "OPSD-V evaluates a teacher at student-visited denoising states while using cleaner real-video temporal context as privileged evidence.",
-   "q3": "Self-Forcing and LongLive models with long-video and VBenchLong evaluation.",
-   "q4": "The teacher needs real-video context and the method focuses on autoregressive video generators.",
-   "affiliation": "Meituan",
-   "date": "2026-07-09"
-  },
-  {
-   "id": "2609.35611",
-   "category": "agentic-generative-opd",
-   "sub": "",
-   "title": "On-Policy Self-Distillation for Multi-Turn Image Editing",
-   "venue": "arXiv 2026",
-   "repo": null,
-   "strict": "OPSD",
-   "q1": "Iterative image editing repeatedly conditions on imperfect previous outputs although training data usually contains clean source images.",
-   "q2": "MT-OPSD trains on self-generated conditioning states while a clean-conditioned teacher supplies editing supervision.",
-   "q3": "Three image-editing backbones and the ten-turn LME-Bench.",
-   "q4": "The clean teacher and editing benchmark may not cover open-ended multi-turn edits.",
-   "affiliation": "KAUST; Krea AI",
-   "date": "2026-09-28"
-  },
-  {
-   "id": "2512.23576",
-   "category": "agentic-generative-opd",
-   "sub": "",
-   "title": "LiveTalk: Real-Time Multimodal Interactive Video Diffusion via Improved On-Policy Distillation",
-   "venue": "arXiv 2026",
-   "repo": "GAIR-NLP/LiveTalk",
-   "strict": "OPD",
-   "q1": "Real-time interactive video diffusion must maintain stable motion and appearance under multimodal, long-running interaction.",
-   "q2": "LiveTalk improves on-policy distillation for multimodal avatar video by addressing conditioning quality and optimization scheduling.",
-   "q3": "HDTF, AVSpeech and CelebV-HQ multimodal avatar-video generation.",
-   "q4": "The method focuses on avatar interaction and its behavior in broader open-world generation remains uncertain.",
-   "affiliation": "Shanghai Innovation Institute; Shanghai Jiao Tong University",
-   "date": "2025-12-29"
   }
  ]
 }

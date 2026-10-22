@@ -1,16 +1,16 @@
 <h1 align="center">Awesome Agentic On-Policy Distillation</h1>
 
-<p align="center">Papers, benchmarks, datasets and codebases for <b>Agentic OPD / OPSD</b> —<br>organized by language, multimodal, video, audio and generative agents.</p>
+<p align="center">Papers, benchmarks, datasets and codebases for <b>Agentic OPD / OPSD</b> —<br>organized by language, multimodal, video, audio and Agentic Generative Systems.</p>
 
 <p align="center">
   <a href="https://yongtang2025.github.io/Awesome-Agentic-OPD/"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>
-  <img src="https://img.shields.io/badge/papers-47-4E6813?style=flat-square" alt="papers">
-  <img src="https://img.shields.io/badge/with_code-12-2E86C1?style=flat-square" alt="with code">
+  <img src="https://img.shields.io/badge/papers-42-4E6813?style=flat-square" alt="papers">
+  <img src="https://img.shields.io/badge/with_code-9-2E86C1?style=flat-square" alt="with code">
   <img src="https://img.shields.io/badge/updated-2026.10.22-purple?style=flat-square" alt="updated">
 </p>
 
 <p align="center">
-  <a href="#llm-agentic-opd">LLM (15)</a> · <a href="#multimodal-agentic-opd">Multimodal (14)</a> · <a href="#video-agentic-opd">Video (5)</a> · <a href="#audio-agentic-opd">Audio (7)</a> · <a href="#agentic-generative-opd">Generative (6)</a>
+  <a href="#llm-agentic-opd">LLM (15)</a> · <a href="#multimodal-agentic-opd">Multimodal (14)</a> · <a href="#video-agentic-opd">Video (5)</a> · <a href="#audio-agentic-opd">Audio (7)</a> · <a href="#ags-opd">AGS (1)</a>
 </p>
 
 > **On-policy distillation (OPD)** — the student learns from *its own* rollouts `y ~ π_student(·|x)`, while a teacher scores or corrects those student-generated samples. **OPSD** is the self-distillation case: the teacher is the same model, given privileged information.
@@ -21,13 +21,10 @@ Search, filter and read a four-point summary of every paper in the **[interactiv
 
 | # | Paper | Domain | Affiliation | Code |
 | :-: | :-- | :-- | :-- | :-: |
-| 1 | [Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models](https://arxiv.org/abs/2606.25473) | Generative | Tsinghua University; UT Austin; NVIDIA | [⭐ 825](https://github.com/NVlabs/rcm) |
-| 2 | [OPSD-V: On-Policy Self-Distillation for Post-Training Few-Step Autoregressive Video Generators](https://arxiv.org/abs/2607.08766) | Generative | Meituan | [⭐ 697](https://github.com/MeiGen-AI/OPSD-V) |
-| 3 | [LiveTalk: Real-Time Multimodal Interactive Video Diffusion via Improved On-Policy Distillation](https://arxiv.org/abs/2512.23576) | Generative | Shanghai Innovation Institute; Shanghai Jiao Tong University | [⭐ 353](https://github.com/GAIR-NLP/LiveTalk) |
-| 4 | [UI-MOPD: Multi-Platform On-Policy Distillation for Unified GUI Agents](https://arxiv.org/abs/2607.04425) | Multimodal | Tsinghua University | [⭐ 61](https://github.com/EliSpectre/UI-MOPD) |
-| 5 | [OPOD: On-Policy Omni Distillation](https://arxiv.org/abs/2607.20918) | Audio | Renmin University of China; Tencent | [⭐ 58](https://github.com/VincentZhao2002/OPOD) |
-| 6 | [Refined Policy Distillation: From VLA Generalists to RL Experts](https://arxiv.org/abs/2503.05833) | Multimodal | University of Technology Nuremberg | [⭐ 24](https://github.com/Refined-Policy-Distillation/RPD) |
-| 7 | [Reward-Tilted On-Policy Distillation for Acoustic Grounding in Audio-Language Models](https://arxiv.org/abs/2609.28778) | Audio | NEC Laboratories America; University of Connecticut | [⭐ 1](https://github.com/KaiyangLi1992/RT-OPD) |
+| 1 | [UI-MOPD: Multi-Platform On-Policy Distillation for Unified GUI Agents](https://arxiv.org/abs/2607.04425) | Multimodal | Tsinghua University | [⭐ 61](https://github.com/EliSpectre/UI-MOPD) |
+| 2 | [OPOD: On-Policy Omni Distillation](https://arxiv.org/abs/2607.20918) | Audio | Renmin University of China; Tencent | [⭐ 58](https://github.com/VincentZhao2002/OPOD) |
+| 3 | [Refined Policy Distillation: From VLA Generalists to RL Experts](https://arxiv.org/abs/2503.05833) | Multimodal | University of Technology Nuremberg | [⭐ 24](https://github.com/Refined-Policy-Distillation/RPD) |
+| 4 | [Reward-Tilted On-Policy Distillation for Acoustic Grounding in Audio-Language Models](https://arxiv.org/abs/2609.28778) | Audio | NEC Laboratories America; University of Connecticut | [⭐ 1](https://github.com/KaiyangLi1992/RT-OPD) |
 
 <h2 id="llm-agentic-opd">🧠 LLM Agentic OPD</h2>
 
@@ -127,23 +124,15 @@ On-policy distillation for speech, audio-language and voice-interaction agents. 
 
 </details>
 
-<h2 id="agentic-generative-opd">🎨 Agentic Generative OPD</h2>
+<h2 id="ags-opd">🎨 Agentic Generative Systems (AGS) OPD</h2>
 
-Agentic on-policy distillation for image, video, 3D and other generative models with iterative or interactive behavior. **6 papers**, 3 with code.
-
-| Paper | Affiliation | Date | Code | Cited |
-| :-- | :-- | :-: | :-: | :-: |
-| [Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models](https://arxiv.org/abs/2606.25473) | Tsinghua University; UT Austin; NVIDIA | 2026-06-24 | [⭐ 825](https://github.com/NVlabs/rcm) | 30 |
-| [OPSD-V: On-Policy Self-Distillation for Post-Training Few-Step Autoregressive Video Generators](https://arxiv.org/abs/2607.08766) | Meituan | 2026-07-09 | [⭐ 697](https://github.com/MeiGen-AI/OPSD-V) | 16 |
-| [LiveTalk: Real-Time Multimodal Interactive Video Diffusion via Improved On-Policy Distillation](https://arxiv.org/abs/2512.23576) | Shanghai Innovation Institute; Shanghai Jiao Tong University | 2025-12-29 | [⭐ 353](https://github.com/GAIR-NLP/LiveTalk) | 8 |
+On-policy distillation for Agentic Generative Systems that plan toward goals, execute generation tools and refine outputs from feedback; generic iterative diffusion distillation is excluded. **1 paper**, 0 with code.
 
 <details>
-<summary>📄 3 more without public code (newest first)</summary>
+<summary>📄 1 more without public code (newest first)</summary>
 
 | Paper | Affiliation | Date | Code | Cited |
 | :-- | :-- | :-: | :-: | :-: |
-| [On-Policy Self-Distillation for Multi-Turn Image Editing](https://arxiv.org/abs/2609.35611) | KAUST; Krea AI | 2026-09-28 | — | 2 |
-| [Flow3D-OPD: Multi-Teacher On-Policy Distillation for 3D Geometry Generation with Flow-Matching Diffusion Transformer](https://arxiv.org/abs/2609.07137) | Shanghai Jiao Tong University; Zhejiang Normal University; Shandong Normal University; Tencent Hunyuan3D | 2026-09-07 | — | 1 |
 | [GenEvolve: Self-Evolving Image Generation Agents via Tool-Orchestrated Visual Experience Distillation](https://arxiv.org/abs/2605.21605) | HKUST (GZ); Meituan; HKUST; National University of Singapore | 2026-05-20 | — | 20 |
 
 </details>
