@@ -1,6 +1,6 @@
 <h1 align="center">Awesome Agentic On-Policy Distillation</h1>
 
-<p align="center">Papers, benchmarks, datasets and codebases for <b>Agentic OPD / OPSD</b> —<br>organized by language, multimodal, embodied, video, audio and Agentic Generative Systems.</p>
+<p align="center">Papers, benchmarks, datasets and codebases for <b>Agentic OPD / OPSD</b> —<br>organized by language, multimodal, omni-modal, embodied, video, audio and Agentic Generative Systems.</p>
 
 <p align="center">
   <a href="https://yongtang2025.github.io/Awesome-Agentic-OPD/"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>
@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="#llm-agentic-opd">LLM (78)</a> · <a href="#multimodal-agentic-opd">Multimodal (9)</a> · <a href="#embodied-agentic-opd">Embodied (12)</a> · <a href="#video-agentic-opd">Video (0)</a> · <a href="#audio-agentic-opd">Audio (0)</a> · <a href="#ags-opd">AGS (1)</a>
+  <a href="#llm-agentic-opd">LLM (78)</a> · <a href="#multimodal-agentic-opd">Multimodal (9)</a> · <a href="#omni-agentic-opd">Omni (0)</a> · <a href="#embodied-agentic-opd">Embodied (12)</a> · <a href="#video-agentic-opd">Video (0)</a> · <a href="#audio-agentic-opd">Audio (0)</a> · <a href="#ags-opd">AGS (1)</a>
 </p>
 
 > **On-policy distillation (OPD)** — the student learns from *its own* rollouts `y ~ π_student(·|x)`, while a teacher scores or corrects those student-generated samples. **OPSD** is the self-distillation case: the teacher is the same model, given privileged information.
@@ -163,6 +163,15 @@ On-policy distillation for multimodal agents with action-observation loops, incl
 | [The Next Screenshot Knows: Gated Hindsight Distillation for Mobile GUI Agents](https://arxiv.org/abs/2608.06065) | University of Electronic Science and Technology of China | 2026-08-06 | — | 2 |
 
 </details>
+
+<h2 id="omni-agentic-opd">🌐 Omni Agentic OPD</h2>
+
+On-policy distillation for omni-modal agents that jointly perceive and act across text, vision, audio and other modalities, including omni-modal tool calling, cross-modal tool results and multi-turn agent interaction. **0 papers**, 0 with code.
+
+No papers currently listed meet both the interaction and distillation criteria.
+
+| Paper | Affiliation | Date | Code | Cited |
+| :-- | :-- | :-: | :-: | :-: |
 
 <h2 id="embodied-agentic-opd">🤖 Embodied Agentic OPD</h2>
 

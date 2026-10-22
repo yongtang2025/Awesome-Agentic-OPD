@@ -21,6 +21,14 @@
    "desc_zh": "面向具有动作—观察闭环的多模态智能体，包括视觉工具、多模态搜索与多轮 GUI 交互；不纳入仅有静态问答或截图定位的工作。"
   },
   {
+   "key": "omni-agentic-opd",
+   "short": "Omni",
+   "title": "🌐 Omni Agentic OPD",
+   "title_zh": "🌐 Omni Agentic OPD",
+   "desc": "On-policy distillation for omni-modal agents that jointly perceive and act across text, vision, audio and other modalities, including omni-modal tool calling, cross-modal tool results and multi-turn agent interaction.",
+   "desc_zh": "面向联合处理文本、视觉、音频及其他模态并进行闭环决策的全模态智能体的在策略蒸馏，涵盖全模态工具调用、跨模态工具反馈与多轮全模态智能体交互；仅有静态多模态问答或单模态工具使用不予收录。"
+  },
+  {
    "key": "embodied-agentic-opd",
    "short": "Embodied",
    "title": "🤖 Embodied Agentic OPD",
