@@ -257,14 +257,18 @@ def build_readme(src, stats):
       "[a GitHub Action](.github/workflows/refresh.yml)"
       + (f" (last run: {updated})." if updated else "."))
     w("")
-    w("## Acknowledgments")
-    w("")
-    w("The initial layout is adapted from [README-Reference.md](README-Reference.md). "
-      "Summaries are paraphrased from abstracts and may contain errors — the papers are the reference.")
-    w("")
     w("## License")
     w("")
     w("[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) — public-domain dedication.")
+    w("")
+    w("## Acknowledgments")
+    w("")
+    w("> **With gratitude and respect to [Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).** "
+      "We acknowledge its foundational contribution to organizing the multimodal on-policy distillation literature. "
+      "If you want to understand the **Multimodal OPD field as a whole**, please visit "
+      "[Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).")
+    w("")
+    w("Summaries are paraphrased from abstracts and may contain errors — the papers are the reference.")
     w("")
     with open(README, "w", encoding="utf-8") as f: f.write("\n".join(L))
     log("wrote README.md")
