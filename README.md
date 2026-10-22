@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="#llm-agentic-opd">LLM (78)</a> · <a href="#multimodal-agentic-opd">Multimodal (9)</a> · <a href="#omni-agentic-opd">Omni (0)</a> · <a href="#embodied-agentic-opd">Embodied (12)</a> · <a href="#video-agentic-opd">Video (0)</a> · <a href="#audio-agentic-opd">Audio (0)</a> · <a href="#ags-opd">AGS (1)</a>
+  <a href="#llm-agentic-opd">LLM (78)</a> · <a href="#multimodal-agentic-opd">Multimodal (9)</a> · <a href="#video-agentic-opd">Video (0)</a> · <a href="#audio-agentic-opd">Audio (0)</a> · <a href="#omni-agentic-opd">Omni (0)</a> · <a href="#embodied-agentic-opd">Embodied (12)</a> · <a href="#ags-opd">AGS (1)</a>
 </p>
 
 > **On-policy distillation (OPD)** — the student learns from *its own* rollouts `y ~ π_student(·|x)`, while a teacher scores or corrects those student-generated samples. **OPSD** is the self-distillation case: the teacher is the same model, given privileged information.
