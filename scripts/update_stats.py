@@ -159,7 +159,7 @@ def build_readme(src, stats):
     w('<h1 align="center">Awesome Agentic On-Policy Distillation</h1>')
     w("")
     w('<p align="center">Papers, benchmarks, datasets and codebases for <b>Agentic OPD / OPSD</b> —<br>'
-      'organized by language, multimodal, video, audio and Agentic Generative Systems.</p>')
+      'organized by language, multimodal, embodied, video, audio and Agentic Generative Systems.</p>')
     w("")
     w('<p align="center">')
     w(f'  <a href="{pages}"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>')
