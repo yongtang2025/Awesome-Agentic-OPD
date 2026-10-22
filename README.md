@@ -164,6 +164,24 @@ On-policy distillation for multimodal agents with action-observation loops, incl
 
 </details>
 
+<h2 id="video-agentic-opd">🎬 Video Agentic OPD</h2>
+
+On-policy distillation for agents that act on video tools or video-based environments and use the resulting observations; static video QA and temporal grounding alone are excluded. **0 papers**, 0 with code.
+
+No papers currently listed meet both the interaction and distillation criteria.
+
+| Paper | Affiliation | Date | Code | Cited |
+| :-- | :-- | :-: | :-: | :-: |
+
+<h2 id="audio-agentic-opd">🔊 Audio Agentic OPD</h2>
+
+On-policy distillation for agents in interactive speech, audio-tool or audio-environment tasks; fixed-input ASR, audio QA and affect recognition alone are excluded. **0 papers**, 0 with code.
+
+No papers currently listed meet both the interaction and distillation criteria.
+
+| Paper | Affiliation | Date | Code | Cited |
+| :-- | :-- | :-: | :-: | :-: |
+
 <h2 id="omni-agentic-opd">🌐 Omni Agentic OPD</h2>
 
 On-policy distillation for omni-modal agents that jointly perceive and act across text, vision, audio and other modalities, including omni-modal tool calling, cross-modal tool results and multi-turn agent interaction. **0 papers**, 0 with code.
@@ -199,24 +217,6 @@ On-policy distillation of policies evaluated through closed-loop robot, driving 
 | [VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation](https://arxiv.org/abs/2603.26666) | HKUST (GZ) | 2026-03-27 | — | 14 |
 
 </details>
-
-<h2 id="video-agentic-opd">🎬 Video Agentic OPD</h2>
-
-On-policy distillation for agents that act on video tools or video-based environments and use the resulting observations; static video QA and temporal grounding alone are excluded. **0 papers**, 0 with code.
-
-No papers currently listed meet both the interaction and distillation criteria.
-
-| Paper | Affiliation | Date | Code | Cited |
-| :-- | :-- | :-: | :-: | :-: |
-
-<h2 id="audio-agentic-opd">🔊 Audio Agentic OPD</h2>
-
-On-policy distillation for agents in interactive speech, audio-tool or audio-environment tasks; fixed-input ASR, audio QA and affect recognition alone are excluded. **0 papers**, 0 with code.
-
-No papers currently listed meet both the interaction and distillation criteria.
-
-| Paper | Affiliation | Date | Code | Cited |
-| :-- | :-- | :-: | :-: | :-: |
 
 <h2 id="ags-opd">🎨 Agentic Generative Systems (AGS) OPD</h2>
 
