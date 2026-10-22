@@ -1,0 +1,592 @@
+{
+  "2610.20261": {
+    "id": "2610.20261",
+    "title": "Harness Policy Distillation: Aligning Agent Policies with Runtime Semantics",
+    "abstract": "Deploying a general-purpose model as an agent means running it inside a product-specific runtime harness that decides which actions are executable, how state advances, and when the loop may terminate. Ordinary trajectory supervision shows which action was taken but leaves the runtime semantics behind that action implicit. We introduce Harness Policy Distillation (HPD), which makes these runtime control semantics an explicit training target alongside actions to align the harness policy. HPD replays reference trajectories through the harness to recover the runtime semantics that are implicit in ordinary trajectory data, and represents them as control documents at each model-call boundary. These documents provide privileged information for a teacher to generate actions, while harness verification ensures that the resulting targets are executable under the runtime contract. We jointly train a shared model on the runtime semantics recovered from control-state privileged information and native history, thereby internalizing these semantics into the model policy. At deployment, the trained model uses the original harness interface without requiring the control document or any additional supplement. On TRAJECT-Bench with the Pi harness, Qwen3-8B trained with HPD reaches 22.98% autonomous task success and 49.23% runtime compliance, against 3.09% and 19.90% for the unadapted model. Harness-verified teacher actions substantially improve the native deployment policy, while joint control-state supervision provides further gains in task completion and runtime compliance. HPD turns executable runtime semantics into dense supervision for learning harness-compatible actions at each decision boundary.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-14",
+    "affiliations": [
+      "Nanjing University"
+    ]
+  },
+  "2610.07250": {
+    "id": "2610.07250",
+    "title": "Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation",
+    "abstract": "Wrapping an image generation model in an agentic harness can effectively boost Text-to-Image task performance: the harness can leverage memory, skills, workflow orchestration, result verification, and iterative refinement to continually construct and revise prompts, thereby eliciting better images. These gains, however, remain external to the diffusion model and are realized only while the full harness runs. We propose Diffusion On-Policy Context Distillation (D-OPCD), which treats the agent-improved prompt as privileged context and distills the knowledge encoded in the agent harness into the weights of the diffusion model, so that the model retains part of the harness's benefit when conditioned on the original query alone. Using a Text-to-Image agent equipped with our proposed Auto Skill Evolver (ASE), we show that D-OPCD can internalize harness capabilities into the generator's weights, raising the average direct-generation score from 60.52 to 65.09 across four benchmarks. With this knowledge absorbed into the weights, the harness can shed its saturated skills and resume evolving: a second ASE round on the updated generator improves on a skill-free harness by additional 1.83 points, pointing toward text-to-image systems in which harness and model keep improving each other through continual co-evolution.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-05",
+    "affiliations": [
+      "Harbin Institute of Technology",
+      "Nanyang Technological University",
+      "Shandong University",
+      "Shanghai Artificial Intelligence Laboratory",
+      "Shanghai Jiao Tong University"
+    ]
+  },
+  "2606.19632": {
+    "id": "2606.19632",
+    "title": "Formal Verification of Learned Multi-Agent Communication Policies via Decision Tree Distillation",
+    "abstract": "Multi-agent reinforcement learning (MARL) enables agents to develop coordination strategies through emergent communication, but neural policies lack the formal safety guarantees required for safety-critical robotic deployment in drone swarms and autonomous vehicle fleets. We present the first end-to-end framework for safety verification of learned multi-agent communication policies through policy abstraction: neural policies are distilled into interpretable decision trees, then formally verified, with empirical validation confirming that verified safety properties transfer to original networks. Our four-stage pipeline consists of domain-specific feature extraction from agent observations, decision tree distillation achieving 97.9% +/- 1.2% fidelity to neural policies, automated translation to PRISM probabilistic model checker specifications with complete feature-to-state-variable correspondence, and compositional verification of Probabilistic Computation Tree Logic (PCTL) properties via pairwise decomposition with union-bound aggregation and empirical neighbor modeling. Evaluating Vector-Quantized Variational Information Bottleneck (VQ-VIB) policies for multi-drone coordination with 5-7 agents, we verify 18 temporal logic properties across safety, liveness, and cooperation, achieving 88.9% property satisfaction with all five safety thresholds satisfied (0.3% collision probability vs. 1% threshold). Monte Carlo validation of original neural policies confirms that verified safety properties transfer with <=0.6 percentage-point deviation (95% CI). Discrete VQ-VIB messages provide +11.6 to +13.6 percentage-point fidelity advantages over continuous methods, enabling 3-4x faster verification. Our framework provides empirically validated safety verification for distilled policy abstractions, serving as a practical bridge between deep MARL and formal safety workflows for multi-robot deployment.",
+    "discovery": "OpenAlex",
+    "date": "2026-06-17",
+    "affiliations": [
+      "University of Arkansas at Little Rock"
+    ]
+  },
+  "2606.01249": {
+    "id": "2606.01249",
+    "title": "Trust Region On-Policy Distillation",
+    "abstract": "On-Policy Distillation (OPD) is a fundamental technique for efficient post-training of large language models (LLMs), with broad applications in agent learning, multi-task enhancement, and model compression. However, OPD training becomes unstable when the teacher and student distributions differ substantially, as teacher supervision on student-generated tokens may yield unreliable policy gradients and even cause optimization failure. This work addresses reliable on-policy token-level supervision through credit assignment strategies, and proposes Trust Region On-Policy Distillation, TrOPD. It features the following characteristics: 1) Trust-Region On-Policy Learning: TrOPD performs OPD only in regions where the teacher provides reliable supervision, mitigating the optimization difficulty of the K1 reverse-KL estimator under distribution mismatch. 2) Outlier Estimation: For outlier regions, we explore gradient clipping, masking, and forward-KL estimation to reduce the adverse effects of unreliable supervision. 3) Off-Policy Guidance: The student continues generation from teacher prefixes and uses forward KL to imitate off-policy guidance, encouraging on-policy exploration toward reliable regions. Experiments show that TrOPD consistently outperforms SoTA OPD baselines, including OPD, EOPD, and REOPOLD, across mathematical reasoning, code generation, and general-domain benchmarks.",
+    "discovery": "OpenAlex",
+    "date": "2026-05-31",
+    "affiliations": [
+      "Peking University",
+      "Samsung (China)"
+    ]
+  },
+  "2604.14084": {
+    "id": "2604.14084",
+    "title": "TIP: Token Importance in On-Policy Distillation",
+    "abstract": "On-policy knowledge distillation (OPD) trains a student on its own rollouts under token-level supervision from a teacher. Not all token positions matter equally, but existing views of token importance are incomplete. We ask a direct question: which tokens carry the most useful learning signal in OPD? Our answer is that informative tokens come from two regions: positions with high student entropy, and positions with low student entropy plus high teacher--student divergence, where the student is overconfident and wrong. Empirically, student entropy is a strong first-order proxy: retaining $50\\%$ of tokens with entropy-based sampling matches or exceeds all-token training while reducing peak memory by up to $47\\%$. But entropy alone misses a second important region. When we isolate low-entropy, high-divergence tokens, training on fewer than $10\\%$ of all tokens nearly matches full-token baselines, showing that overconfident tokens carry dense corrective signal despite being nearly invisible to entropy-only rules. We organize these findings with TIP (Token Importance in on-Policy distillation), a two-axis taxonomy over student entropy and teacher--student divergence, and give a theoretical explanation for why entropy is useful yet structurally incomplete. This view motivates type-aware token selection rules that combine uncertainty and disagreement. We validate this picture across three teacher--student pairs spanning Qwen3, Llama, and Qwen2.5 on MATH-500 and AIME 2024/2025, and on the DeepPlanning benchmark for long-horizon agentic planning, where Q3-only training on $<$$20\\%$ of tokens surpasses full-token OPD. Our experiments are implemented by extending the OPD repository https://github.com/HJSang/OPSD_OnPolicyDistillation, which supports memory-efficient distillation of larger models under limited GPU budgets.",
+    "discovery": "OpenAlex",
+    "date": "2026-04-15",
+    "affiliations": []
+  },
+  "2603.11137": {
+    "id": "2603.11137",
+    "title": "Scaling Reasoning Efficiently via Relaxed On-Policy Distillation",
+    "abstract": "On-policy distillation is pivotal for transferring reasoning capabilities to capacity-constrained models, yet remains prone to instability and negative transfer. We show that on-policy distillation can be interpreted, both theoretically and empirically, as a form of policy optimization, where the teacher-student log-likelihood ratio acts as a token reward. From this insight, we introduce REOPOLD (Relaxed On-Policy Distillation) a framework that stabilizes optimization by relaxing the strict imitation constraints of standard on-policy distillation. Specifically, REOPOLD temperately and selectively leverages rewards from the teacher through mixture-based reward clipping, entropy-based token-level dynamic sampling, and a unified exploration-to-refinement training strategy. Empirically, REOPOLD surpasses its baselines with superior sample efficiency during training and enhanced test-time scaling at inference, across mathematical, visual, and agentic tool-use reasoning tasks. Specifically, REOPOLD outperforms recent RL approaches achieving 6.7~12x greater sample efficiency and enables a 7B student to match a 32B teacher in visual reasoning with a ~3.32x inference speedup.",
+    "discovery": "OpenAlex",
+    "date": "2026-03-11",
+    "affiliations": []
+  },
+  "2604.00626": {
+    "id": "2604.00626",
+    "title": "A Survey of On-Policy Distillation for Large Language Models",
+    "abstract": "As Large Language Models continue to grow in both capability and cost, transferring frontier capabilities into smaller, deployable students has become an important engineering problem, and knowledge distillation remains a common technique for this transfer. The prevailing recipe in industrial pipelines, static imitation of teacher-generated text, carries a structural weakness that grows more severe as tasks become longer and more reasoning-intensive. Because the student is trained on flawless teacher prefixes but generates its own at inference, small errors tend to accumulate into trajectories it has rarely been trained to recover from, and the resulting exposure bias has been shown to scale roughly with the square of sequence length. On-Policy Distillation reorganizes the training loop around this observation by having the teacher provide feedback on what the student actually produces, with the goal of reducing the compounding term toward linear and reframing distillation as an iterative correction process rather than single-pass imitation. The resulting literature has expanded along divergence design, reward-guided optimization, and self-play, yet contributions remain scattered across the knowledge distillation, RLHF, and imitation learning communities without a unified treatment. This survey provides such a treatment. We formalize OPD as f-divergence minimization over student-sampled trajectories, organize the field along three design axes (what to optimize, where the signal comes from, and how to stabilize training in practice), and consolidate success conditions, recurring failure modes, and the connection between OPD and KL-constrained reinforcement learning. We close with open problems that emerge from this synthesis, including distillation scaling laws, uncertainty-aware feedback, agent-level distillation, and the growing overlap between knowledge distillation and RL.",
+    "discovery": "OpenAlex",
+    "date": "2026-04-01",
+    "affiliations": [
+      "Tencent (China)"
+    ]
+  },
+  "2609.08337": {
+    "id": "2609.08337",
+    "title": "Distillation as Probability Transport: Routed On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) transfers teacher knowledge on student-generated trajectories, but efficient sampled objectives reduce the teacher distribution to scalar credit on individual tokens. Such credit indicates whether a token should gain or lose probability, yet leaves the corresponding redistribution unspecified. We recast OPD as teacher-guided probability transport and propose RouteOPD (Routed On-Policy Distillation), which decomposes local teacher--student disagreement into student-excess sources and teacher-deficit destinations and couples them into explicit transport pairs. RouteOPD optimizes pairwise log-odds toward jointly realizable targets obtained from a bounded teacher potential, while adapting the transport budget to the concentration of teacher demand. This formulation directs updates toward teacher-preferred destinations and controls their magnitude within a single transport operator. Experiments across four teacher--student settings and four mathematical-reasoning benchmarks demonstrate that RouteOPD consistently outperforms sampled reverse-KL OPD, with improvements accompanied by higher routing fidelity and lower background leakage. These results demonstrate the effectiveness of explicitly modeling probability transport in on-policy distillation.",
+    "discovery": "OpenAlex",
+    "date": "2026-09-08",
+    "affiliations": []
+  },
+  "2607.19046": {
+    "id": "2607.19046",
+    "title": "Contrastive On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) trains a student model on trajectories sampled from its own policy, providing dense token-level supervision by minimizing the divergence between the teacher's and student's output distributions at each token. Although existing OPD approaches effectively distill strong reasoning capabilities into student models, they inherently inherit uncurated chain-of-thought traces, exacerbating overthinking and reasoning redundancy. To address this limitation, we introduce COPD, a contrastive OPD framework. Specifically, for each token generated by the student, a frozen teacher evaluates the current student state under two contrasting prompts that induce low and high reasoning effort, respectively. The resulting difference in log-probabilities serves as a token-level advantage signal to guide the policy update. Rather than merely mimicking a single teacher distribution, COPD guides the student model toward acquiring concise and efficient reasoning strategies. We evaluate COPD across 9 multimodal benchmarks covering both reasoning and understanding tasks. Empirical results show that COPD substantially reduces reasoning length without hurting task performance, consistently improving efficiency across different tasks and model scales. In addition, this contrastive paradigm extends naturally to on-policy self-distillation (OPSD), establishing self-contrastive supervisory signals that enable a single model to compress its own reasoning without an external teacher.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-21",
+    "affiliations": [
+      "Alibaba Group (China)",
+      "Shanghai Jiao Tong University"
+    ]
+  },
+  "2609.38360": {
+    "id": "2609.38360",
+    "title": "On the Off-Policy Teacher in On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) has recently emerged as a promising post-training paradigm in which the student learns from trajectories generated by its own policy under dense teacher supervision. However, OPD introduces a fundamental asymmetry: although the sampled trajectories are on-policy for the student, they are off-policy for the teacher. The teacher is typically optimized to continue from prefixes generated by its own policy, but during OPD it must instead supervise prefixes generated by the student. Empirically, we find that its continuation performance degrades as these prefixes grow longer. To address this issue, we propose Student-COnditioned Updates of the Teacher (SCOUT), a co-training framework that adapts the teacher to student-generated prefixes. Alongside standard OPD updates, SCOUT periodically optimizes the teacher's conditional ability using reinforcement learning with verifiable rewards, where the teacher generates continuations from student prefixes and learns from outcome rewards. Controlled experiments show that SCOUT improves the teacher's ability to continue from student-generated prefixes, supporting the intended mechanism of student-conditioned teacher adaptation. Across multiple teacher--student configurations, model scales, and reasoning domains, SCOUT also consistently improves the effectiveness of on-policy distillation.",
+    "discovery": "OpenAlex",
+    "date": "2026-09-29",
+    "affiliations": [
+      "Amazon (United States)",
+      "Carnegie Mellon University",
+      "Georgia Institute of Technology",
+      "Washington University in St. Louis"
+    ]
+  },
+  "2606.06021": {
+    "id": "2606.06021",
+    "title": "OPRD: On-Policy Representation Distillation",
+    "abstract": "On-policy distillation (OPD) supervises the student exclusively in the output space by matching next-token distributions. This paradigm suffers from two limitations: (i) a high-variance gradient estimator whose signal-to-noise ratio collapses as the student approaches the teacher, and (ii) an LM-head information bottleneck that discards the teacher's intermediate hidden states. We propose On-Policy Representation Distillation (OPRD), the first method to lift on-policy distillation into the hidden-state space. OPRD aligns student and teacher representations across selected layers on the same on-policy rollouts, providing dense, deterministic, per-layer supervision while bypassing the LM head entirely. Theoretically, OPRD provides a deterministic per-sample gradient, removing the token-level estimation variance that plagues OPD, and exposes structural information that any output-space objective necessarily discards. Empirically, OPRD closes the student-teacher gap on competition mathematics benchmarks (AIME 2024, AIME 2025, and AIMO), where every output-space baseline plateaus below the teacher, while training 1.44x faster and using up to 54% less memory. We further extend OPRD to the cross-architecture setting via OPRD-Bridge. By exploiting the observation that heterogeneous models share a low-rank representational structure, we construct a frozen projector pair that aligns representations across arbitrary depth and width mismatches, shifting the alignment from the output space (which depends on a shared vocabulary) to the representation space. We validate OPRD-Bridge on both cross-architecture (Qwen3-4B -> Qwen3-1.7B-Base) and cross-tokenizer (Phi-4-mini-reasoning -> Qwen3-1.7B-Base) settings, demonstrating successful knowledge transfer even when the vocabulary-based alignment channel is unavailable. Code: https://github.com/ShenzhiYang2000/OPRD.",
+    "discovery": "OpenAlex",
+    "date": "2026-06-04",
+    "affiliations": [
+      "Ant Group (China)",
+      "Zhejiang University"
+    ]
+  },
+  "2607.20918": {
+    "id": "2607.20918",
+    "title": "OPOD: On-Policy Omni Distillation",
+    "abstract": "Omni-modal models provide a unified interface for text, images, and audio. However, improving these abilities together remains difficult, as post-training on pooled multimodal data often fails to preserve the strengths of modality teachers. On-policy distillation (OPD) has recently become popular in model post-training. It samples responses from the current student and compares the teacher's and student's next-token distributions along those responses, yielding dense supervision while reducing the mismatch between training and inference. Despite these advantages, standard OPD does not readily extend to several modality teachers. Their guidance may favor conflicting changes to the shared model, while matching each teacher's next-token distribution can prevent the student from moving beyond that teacher. To address these challenges, we propose On-Policy Omni Distillation (OPOD), which consolidates text, image, and audio teachers into one omni model. OPOD routes each response to the corresponding teacher, controls the teachers independently, and applies guidance only when the teacher assigns a higher probability to the generated token. The selected teacher also evaluates answer confidence and whether the reasoning increases support for the answer. Extensive experiments on twelve benchmarks show that OPOD achieves the best average at three model scales, reaching 70.8, 51.7, and 46.2 and outperforming the strongest comparator by 2.1, 1.8, and 1.7 points. At 30B, it surpasses the base model and pooled RL training on all twelve benchmarks, and ranks first or second on eleven even when the teachers are included. Only the student is retained for deployment.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-23",
+    "affiliations": [
+      "Renmin University of China",
+      "Tencent (China)"
+    ]
+  },
+  "2607.04751": {
+    "id": "2607.04751",
+    "title": "Trust Region Policy Distillation",
+    "abstract": "Big goals are hard to achieve all at once; breaking them into small steps is wiser. We present Trust Region Policy Distillation (TOP-D), which transforms the notoriously unstable, high-variance On-Policy Distillation (OPD) into a stable training paradigm by dynamically constructing a proximal teacher. Theoretically, we establish a rigorous framework demonstrating that TOP-D inherently controls gradient variance. By providing a formal global convergence analysis alongside a monotonic improvement bound, we mathematically formalize the reliability and stability of the overall training dynamics. Empirically, TOP-D dramatically enhances training stability, sample efficiency, and final performance on mathematical reasoning tasks. More importantly, TOP-D introduces zero additional computational overhead, positioning itself as a promising alternative to the well-established OPD paradigm.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-06",
+    "affiliations": []
+  },
+  "2608.24696": {
+    "id": "2608.24696",
+    "title": "On-policy Distillation with Verifiable Reward",
+    "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) and on-policy distillation (OPD) have become two widely adopted paradigms for post-training large language models. However, RLVR suffers from sparse task-level feedback, while OPD provides dense token-level guidance but ignores trajectory correctness, limiting its performance to that of the teacher. Combining them is a promising direction: OPD supplies dense supervisory signals, while RLVR provides task-level correctness. Nevertheless, existing integrations often rely on weighted combination or heuristic switching, introducing extra hyperparameters and trade-offs. We propose On-policy Distillation with Verifiable Reward (OPDVR), a simple yet effective method that seamlessly combines OPD and RLVR without adding any hyperparameters. We first reformulate the implicit reward of sampled-token OPD based on trajectory correctness, then apply a ReLU gating mechanism to ensure that correct trajectories receive non-negative rewards and incorrect ones receive non-positive rewards---thereby aligning the distillation signal with task success while preserving the teacher's distributional guidance. Furthermore, our modification transforms sampled-token OPD into a proper RLVR method, making it readily combinable with any policy gradient algorithm, such as GRPO. Experiments on six reasoning benchmarks show that OPDVR consistently outperforms standard OPD. Our code is available at https://github.com/LeapLabTHU/OPDVR.",
+    "discovery": "OpenAlex",
+    "date": "2026-08-25",
+    "affiliations": [
+      "Beihang University",
+      "Peking University",
+      "Tsinghua University"
+    ]
+  },
+  "2607.26246": {
+    "id": "2607.26246",
+    "title": "Weak-to-Strong On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD), which aligns a student with the teacher's token-level distribution on the student's own rollouts, is an effective paradigm for transferring capabilities across LLMs. Prevailing approaches assume a teacher at least as capable as the student: they either distill a larger model into a smaller one, which fails at the frontier where no larger teacher exists, or consolidate multiple domain experts trained from a shared base, which requires costly training at the student's scale. We introduce Weak-to-Strong On-Policy Distillation (W2S-OPD), a simple yet effective OPD framework that improves the strong student by distilling from multiple weak models. W2S-OPD constructs a proxy teacher in logit space from a contrast pair of a positive and a negative model, both smaller than the student and cheap to obtain. Their logit difference isolates the capability direction, which is added to the student's own base model, yielding a proxy teacher that couples this direction while staying distributionally adjacent to the student. The student then distills it by minimizing the per-token reverse KL on its own rollouts. We instantiate the contrast pair as i) a post-RL expert against its pre-RL initialization, isolating the skill RL instills, ii) a larger against a smaller base model, isolating the capability from scale, and iii) a small base model with correct versus wrong hints, isolating the instance-level direction toward the solution. Across four math and three code benchmarks, W2S-OPD outperforms OPD, enables the student to surpass the domain teacher, and keeps improving the student even when every supervision source is weaker. Analysis shows different contrasts yield distinct signals: the post-RL and hint contrasts emphasize reasoning frameworks, while the scale contrast emphasizes the solving procedure. Our code will be available at https://github.com/Yu-Fangxu/W2S-OPD.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-28",
+    "affiliations": [
+      "Microsoft (United States)",
+      "Mohamed bin Zayed University of Artificial Intelligence",
+      "University of Maryland, College Park"
+    ]
+  },
+  "2610.22236": {
+    "id": "2610.22236",
+    "title": "Training-Free On-Policy Distillation",
+    "abstract": "On-policy distillation consolidates specialist models into one student at the price of rollouts, teacher passes and gradient steps for every teacher. We show that the consolidation does not need training: with forward passes only, the capabilities of separately tuned specialists can be aggregated into one model that is, on average, more accurate than either specialist alone. When specialists share a base model, distillation has an exact layer-wise solution: each linear layer of the fused model must reproduce every specialist's output on the inputs that specialist receives while reading its own answers, a least-squares problem whose solution needs only the second moments of those inputs. One forward pass over a few hundred rollouts provides them. We call this training-free on-policy distillation (\\method). What the rollouts contain matters more than the solver: answers truncated in repetition loops are few among a mathematics specialist's rollouts but carry a large share of their tokens, and removing them lifts the fused model on AIME25 from task arithmetic's level to the specialist's at matched precision. On Olmo~3 7B, a few GPU-hours of forward computation per specialist yield a generalist that keeps most of each specialist's gain on each of seven mathematics and code benchmarks.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-15",
+    "affiliations": [
+      "Tsinghua University",
+      "University of Illinois Urbana-Champaign"
+    ]
+  },
+  "2607.29078": {
+    "id": "2607.29078",
+    "title": "DASH-OPD: Discrepancy-Aware Switching with Hysteresis for On-Policy Distillation",
+    "abstract": "While on-policy distillation (OPD) reduces exposure bias by training student language models on their own rollouts, early student errors in long-horizon agentic scenarios can lead to contexts unfamiliar to the teacher. To improve trajectory quality, recent work on agentic OPD introduces teacher intervention into training rollouts by switching the executor between the student and the teacher. However, existing methods determine how much teacher intervention is needed---but not when. To address this limitation, we propose DASH-OPD (Discrepancy-Aware Switching with Hysteresis for OPD), the first agentic OPD method to perform adaptive, bidirectional executor switching. At each turn, DASH-OPD measures teacher--student discrepancy using a mean log-likelihood ratio over action tokens. High student-to-teacher ratios on student turns serve as drift signals, while low teacher-to-student ratios on teacher turns serve as recovery signals. These signals are accumulated over multiple turns to form drift and recovery evidence, respectively. DASH-OPD switches executors when either type of evidence exceeds its corresponding switching threshold, introducing hysteresis that prevents rapid switching triggered by transient discrepancy fluctuations. Across three benchmarks and two student model scales, DASH-OPD outperforms five baselines in all 14 task-performance comparisons, while requiring the fewest interaction turns in nine of ten efficiency comparisons. Code, trained models, and training logs are available at https://github.com/Lucian1115/DASH-OPD",
+    "discovery": "OpenAlex",
+    "date": "2026-07-31",
+    "affiliations": [
+      "Chinese University of Hong Kong"
+    ]
+  },
+  "2605.31490": {
+    "id": "2605.31490",
+    "title": "Are Full Rollouts Necessary for On-Policy Distillation?",
+    "abstract": "On-policy distillation (OPD) provides dense teacher feedback along student-generated rollouts rather than fixed teacher traces and has emerged as a promising post-training paradigm. However, standard OPD typically generates full rollouts during training, which is computationally expensive and may expose the student to unreliable teacher feedback at late rollout positions, especially during early training. We identify the rollout horizon as a key bottleneck in OPD that substantially impacts training efficiency. Unlike Reinforcement Learning with Verifiable Rewards (RLVR), OPD does not require a final answer reward to provide learning signals. Therefore, full rollouts may not always be necessary for OPD. Motivated by this insight, we propose two simple horizon-control strategies: Progressive OPD (POPD), which gradually expands the rollout horizon during training, and Truncated OPD (TOPD), which permanently performs distillation on reliable truncated rollouts. Experiments on mathematical reasoning show that POPD improves the training efficiency of OPD by up to 3$\\times$, while TOPD matches OPD performance using only 10\\% of the rollout horizon, leading to substantial wall-clock and memory reductions. These results demonstrate that controlling the rollout horizon offers a simple and practical path to more efficient OPD.",
+    "discovery": "OpenAlex",
+    "date": "2026-05-29",
+    "affiliations": [
+      "Chinese Academy of Sciences",
+      "Institute of Automation",
+      "Meituan (China)",
+      "University of Chinese Academy of Sciences"
+    ]
+  },
+  "2610.06105": {
+    "id": "2610.06105",
+    "title": "Flash-OPD: Fast On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) provides dense teacher supervision on student-generated trajectories, but generating and evaluating long rollouts incurs substantial training cost. Existing acceleration methods reduce this cost through open-loop rollout schedules or closed-loop horizon adaptation. However, supervision compatibility can vary substantially across trajectories, making a single rollout horizon difficult to match their heterogeneous reliable lengths: an overly short horizon may truncate useful supervision, while an overly long one wastes computation beyond reliable regions. Our key insight is that the trajectory-specific reliability boundary need not be predicted before generation. By viewing reliability as the first-passage of accumulated low teacher--student compatibility events, the boundary is inherently unknown before sampling, yet whether it has been reached can be determined exactly from the observed prefix. Building on this insight, we propose *Flash-OPD*, which shifts from rollout-horizon control to adaptive trajectory-level boundary verification. *Flash-OPD* interleaves cached generation with teacher verification and independently stops each trajectory according to its observed compatibility events. To reduce verification overhead, the recent event rate is used only to schedule the next verification point, while the actual stopping decision always relies on the exact cumulative count. This separation prevents estimation errors from causing premature termination while enabling efficient verification during generation. Extensive experiments across diverse datasets and teacher--student settings show that *Flash-OPD* achieves $2.2\\times$--$7.5\\times$ speedups over standard OPD while maintaining or improving accuracy.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-05",
+    "affiliations": [
+      "Hong Kong University of Science and Technology",
+      "The Hong Kong University of Science and Technology (Guangzhou)"
+    ]
+  },
+  "2610.11423": {
+    "id": "2610.11423",
+    "title": "Policy Alignment: New Signals for Membership Auditing in On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) trains a student model by aligning its policy with a teacher model on trajectories generated by the student model itself. Through this process, the student policy moves toward the teacher on the prompts used for distillation. However, these prompts are often private and costly, creating a need for prompt-level membership auditing. Existing methods mainly rely on likelihood-based confidence signals or student policy drift between checkpoints, but they do not capture the teacher-induced direction of the student update. In this paper, we propose Policy Alignment Membership Auditing (PAMA), a new auditing framework tailored for OPD. Our key observation is that a member prompt directly contributes to the teacher-guided policy update, while a non-member prompt only experiences indirect effects through cross-prompt generalization. Based on this directional trace, PAMA measures whether the student update moves toward reducing the teacher loss on a candidate prompt. Specifically, we introduce Teacher Alignment Gain (TAG) to estimate the teacher-aligned update direction from model outputs, and further combine it with student drift and uncertainty alignment signals for reliable membership auditing. We evaluate PAMA on six datasets and three teacher-student model families. On MATH, the primary evaluation benchmark, PAMA achieves AUC values of 0.791--0.941, improving AUC by 14.6--20.6% over state-of-the-art baselines.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-08",
+    "affiliations": [
+      "The Hong Kong University of Science and Technology (Guangzhou)",
+      "Xidian University"
+    ]
+  },
+  "2606.09471": {
+    "id": "2606.09471",
+    "title": "Escaping the KL Agreement Trap in On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) provides dense token-level supervision by asking a teacher to score student-generated rollouts. However, when the student drifts into an unrecoverable prefix, the teacher may locally agree with the degraded state, producing low reverse KL but little corrective training signal. We identify this persistent regime as a low-KL agreement trap. Further analyses show that tokens during and after such traps produce less useful supervision signals. We propose KAT (KL Agreement Trap Termination), an online OPD termination rule that detects persistent low-KL agreement with a dynamic training-adaptive threshold. By filtering weak supervision from degenerate agreement, KAT improves avg@k accuracy by 2.66% and pass@k by 3.43% across four mathematical benchmarks, while reducing average rollout length by 59.73%.",
+    "discovery": "OpenAlex",
+    "date": "2026-06-08",
+    "affiliations": [
+      "Artificial Intelligence in Medicine (Canada)",
+      "Eastern Institute of Technology, Ningbo",
+      "Hong Kong Polytechnic University",
+      "Hong Kong University of Science and Technology",
+      "The Hong Kong University of Science and Technology (Guangzhou)"
+    ]
+  },
+  "2610.13264": {
+    "id": "2610.13264",
+    "title": "CV-OPD: Contrastive Vision On-policy Distillation",
+    "abstract": "On-policy distillation (OPD) reveals versatility and convenience during VLM post-training, providing dense supervision for student from teacher. However, we observed an anomaly that the distilled VLM could still answer the questions accurately even when the related visual regions were masked or replaced with noise. Building on this observation, our quantitative and qualitative experiments demonstrate that OPD, which uses the answer as a hint, has failed to teach students to genuinely seek out and rely on visual evidence. Our theoretical analysis suggests that this failure arises from a shortcut enabled by the lack of visual constraints during distillation. To address the issue, we introduce Contrastive Vision On-policy Distillation (CV-OPD), which compares teacher distributions induced by positive and negative crops while conditioning on the same student prefix and augments optimization with a margin-based contrastive constraint, which is modulated with discrepancy gating across token and sample level. Specifically, CV-OPD first introduces a negative teacher unrelated to the answer and designs a Contrastive Divergence Loss (CDL) that constrains the feature distribution of student by contrasting the positive and negative teachers, correcting how the student exploits visual regions. The CV-OPD introduces a Discrepancy Aware Gate (DAG) that uses token-level and sample-level discrepancies to select visually relevant tokens for optimization, directing the student's attention toward visual content. Extensive experiments across a broad range of fine-grained visual benchmarks demonstrate that CV-OPD substantially alleviates shortcut and consistently improves the visual reasoning capabilities of existing VLMs.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-09",
+    "affiliations": [
+      "Shanxi Science and Technology Department",
+      "Xiamen University"
+    ]
+  },
+  "2609.32722": {
+    "id": "2609.32722",
+    "title": "Scaling Properties of Same-Family On-Policy Distillation",
+    "abstract": "*Reinforcement learning (RL)* can induce substantial reasoning capabilities in large language models (LLMs), but how much of this capability transfers across model scales, and how quickly, remains unclear. We study the scaling properties of *on-policy distillation (OPD)* across *weak-to-strong*, *same-base*, and *strong-to-weak* teacher--student setups. We find that early OPD training dynamics uniformly exhibit a regular *useful-transfer* regime, in which held-out accuracy (the *gold score*, $G$) rises approximately linearly in $d=\\sqrt{\\mathrm{KL}(π_θ\\Vert π_{\\mathrm{ref}})}$, the square root of token-level reverse KL divergence from the student initialization. In every observed weak-to-strong pair, the student's peak gold score exceeds its teacher's own, so a compact RL expert can transfer capability to a much larger student via OPD. To estimate OPD outcomes, we fit *power laws* for how $G_{\\mathrm{peak}}$ and the slope of the useful-transfer regime scale with student and teacher parameter counts and with teacher gold score. These laws show that peak gold score improves with teacher scale only up to roughly the student's scale, and that at a matched gold score smaller teachers transfer better, so a teacher's score alone does not define its supervision value. We also study the scaling effects of two OPD variants, bootstrapping weak-to-strong OPD, and the degree of on-policy supervision.",
+    "discovery": "OpenAlex",
+    "date": "2026-09-26",
+    "affiliations": [
+      "Kuaishou (China)",
+      "Zhejiang University"
+    ]
+  },
+  "2610.04882": {
+    "id": "2610.04882",
+    "title": "ResOPD: Tail Residualization for Sparse On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) trains a student model on self-generated trajectories, but transmitting dense teacher distributions across long reasoning traces creates prohibitive communication and memory bottlenecks. Practical systems therefore rely on sparse teacher interfaces, typically transmitting either the sampled-token score or a small Top-$k$ distribution. However, this sparse setting faces a fundamental dilemma: sampled-token estimators are unbiased but suffer from severe gradient variance, whereas directly optimizing Top-$k$ objectives introduces systematic bias. To improve this trade-off, we propose ResOPD (On-Policy Distillation with Tail Residualization), which provides unbiased full-vocabulary reverse KL gradient estimation under on-policy sampling, with substantial variance reduction under the same sparse payload in the evaluated settings. ResOPD aggregates the unobserved vocabulary into an observable coarse tail event, computes its exact aggregate gradient, and samples only the fine-grained within-tail residual, which requires no additional teacher queries or forward passes. Extensive experiments demonstrate that ResOPD substantially reduces gradient variance, stabilizes online training dynamics, and improves downstream performance across the evaluated settings. These results establish ResOPD as an efficient, plug-and-play variance reduction primitive for sparse on-policy distillation.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-04",
+    "affiliations": [
+      "Fudan University",
+      "Shanghai Artificial Intelligence Laboratory",
+      "Shanghai Jiao Tong University",
+      "University of Science and Technology of China"
+    ]
+  },
+  "2607.28022": {
+    "id": "2607.28022",
+    "title": "Flux-OPD: On-Policy Distillation with Evolving Contexts",
+    "abstract": "Large language model training in open-ended domains lacks verifiable rewards, making task preferences difficult to formalize as effective supervision. Contexts derived from task feedback can provide richer supervision, yet fixed contexts cannot adapt as the student evolves, motivating contexts that evolve with student performance. However, directly using evolving contexts as in-training supervision results in unstable distillation targets and conflicting distributions, requiring mechanisms to stabilize the target and downweight conflicts. In this paper, we characterize context distillation through a reverse-KL decomposition, showing that the student is distilled toward the geometric mean of context-conditioned teachers, while the objective contains a conflict term measuring disagreement among these teachers. Motivated by this characterization, we propose Flux-OPD, an OPD paradigm that uses evolving contexts as in-training supervision to incorporate contextual signals derived from task feedback. Flux-OPD treats differences between context-conditioned and context-free teachers as contextual difference signals, injects them as contextual corrections into the context-free teacher, and weights the correction strength using the conflict term. Experiments show that Flux-OPD achieves the best results among OPD paradigms, highlighting the potential of combining teacher supervision with evolving contexts as in-training supervision.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-30",
+    "affiliations": [
+      "Peking University",
+      "Shanghai Jiao Tong University",
+      "Tsinghua University"
+    ]
+  },
+  "2609.36546": {
+    "id": "2609.36546",
+    "title": "Interactive-Policy Distillation with Bidirectional Propose-and-Verify",
+    "abstract": "On-policy distillation (OPD) trains a student model on its self-generated trajectories with dense token-level teacher feedback. However, naive OPD may suffer from teacher unanchoring, where the student's reasoning trajectory drifts far from the teacher, causing the teacher to be queried on states it would hardly visit and thus provide unreliable supervision. We propose Interactive-Policy Distillation (IPD), which applies adaptive teacher intervention to the student rollout. Under a bidirectional propose-and-verify state machine, the student and teacher alternately exchange their roles as proposer and verifier, and collaboratively generate mixed-source trajectories. Then different supervisions are applied according to the source of each token. This bidirectional propose-and-verify mechanism and the source-split loss make IPD not only a more performant distillation method, but also a unified bridge between on-policy and off-policy paradigms. To make the interleaved dual-model rollouts more efficient, we also design a dedicated fused inference engine that co-hosts both models in one serving instance with separate KV caches and instantiates the state machine model to distribute, collect, and process requests. On math reasoning tasks and across multiple teacher-student model pairs, student models trained with IPD not only outperform those trained with OPD, but also demonstrate higher data efficiency. Specifically, when distilling Qwen3-30B-A3B into Qwen3-1.7B-Base, IPD brings a +3.28 mean@8 and a +3.28 best@8 benchmark-averaged accuracy improvement compared with OPD. Besides, IPD only consumes about 1/4 of the training examples and steps to outperform OPD trained on the whole training dataset for one epoch. We also investigate the impact of different loss variants and takeover / handback configurations, and demonstrate the robustness of IPD on different training data.",
+    "discovery": "OpenAlex",
+    "date": "2026-09-29",
+    "affiliations": [
+      "Morgan Stanley (United States)",
+      "Rutgers, The State University of New Jersey",
+      "University of Wisconsin–Madison"
+    ]
+  },
+  "2607.26057": {
+    "id": "2607.26057",
+    "title": "Pass the Baton: Trajectory-Relayed On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) grounds token-level supervision in the student's own trajectory, yet suffers from prefix failure: once the student commits to a wrong reasoning direction, all subsequent generation builds on this deviation, producing misdirected continuations that elicit unreliable supervision and waste compute. We identify a teacher-student continuation asymmetry on failed prefixes, where the teacher tends to redirect while the student continues along the original direction, and convert it into a label-free handoff trigger in Relay On-Policy Distillation (Relay-OPD). During training, Relay-OPD constructs relay trajectories by letting the teacher briefly take over at detected trigger points to produce a teacher leg, after which the student resumes and is optimized on the resulting trajectory. A limited relay budget concentrates intervention on critical early positions while limiting departure from the student policy. With a Qwen3-4B-Instruct-2507 teacher and Qwen3-0.6B/1.7B-Non-Thinking students on eight mathematical reasoning benchmarks, Relay-OPD achieves the best or second-best results on every benchmark, outperforming standard OPD by +5.73% and the strongest baseline FastOPD by +1.49% on average for 1.7B, with consistent gains at 0.6B. Training trajectory length is reduced by over 50%.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-28",
+    "affiliations": [
+      "Zhejiang University"
+    ]
+  },
+  "2609.34447": {
+    "id": "2609.34447",
+    "title": "Unbiased Top-$k$ Estimation for On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) is becoming an important component of large language model (LLM) post-training for transferring the reasoning capability of a strong teacher LLM to a weaker student LLM. OPD trains the student by minimizing the reverse KL divergence between the teacher and the student via rollouts generated by the student's policy. However, estimating the gradient of the reverse KL divergence in OPD remains a challenge. Using only the sampled token from the student-generated rollout is computationally cheap but provides limited distributional supervision, which will degrade accuracy. In addition, using the full vocabulary provides complete distributional supervision but is computationally expensive. Therefore, recent works propose Top-$k$ OPD (TK-OPD) that use selected top-$k$ tokens, which provides richer distributional supervision than sampled-token estimation at substantially lower computational cost than full-vocabulary estimation. Unfortunately, using only the selected top-$k$ tokens induces bias, leading to accuracy degradation, as the probability mass outside the selected top-$k$ tokens is discarded. To address the bias of TK-OPD, we propose Tail-Corrected Top-$k$ On-Policy Distillation (TT-OPD). It preserves the advantages of TK-OPD, including rich distributional supervision and low computational cost, while providing an unbiased estimator of the gradient of the reverse KL divergence. The key insight of TT-OPD is to use not only the selected top-$k$ tokens, but also the sampled token from the student-generated rollout, thereby recovering the discarded probability mass in expectation, avoiding the bias. Experimental results demonstrate that TT-OPD significantly outperforms other tested OPD variants.",
+    "discovery": "OpenAlex",
+    "date": "2026-09-28",
+    "affiliations": [
+      "Nanjing University",
+      "Shanghai Artificial Intelligence Laboratory"
+    ]
+  },
+  "2606.01039": {
+    "id": "2606.01039",
+    "title": "OPD+: Rethinking the Advantage Design for On-Policy Distillation",
+    "abstract": "On-policy distillation (OPD) is a widely used technique to transfer capabilities from capable teacher language models to the base student models, and can be formulated in a reinforcement learning style objective using student generated rollouts. Yet, despite the divergence reward being dependent on student model likelihood, existing works usually adopt a stop gradient design primarily for stability, which makes the resulting advantage estimation questionable. In this work, we provide a generic optimization framework based on f-divergence between the student and teacher, and mathematically revisit whether such design space is valid. We prove that general stop-gradient operation would lead to biased estimates of the reward objective and corresponding gradient for general divergence functions. We propose OPD+, the corrected version of OPD that demonstrates improved performance over the baseline KL approach and also supports the choice of various f-divergence. We validate our findings on mathematical reasoning and tool-use benchmarks.",
+    "discovery": "OpenAlex",
+    "date": "2026-05-31",
+    "affiliations": [
+      "Capital One (United States)",
+      "Columbia University"
+    ]
+  },
+  "2607.13399": {
+    "id": "2607.13399",
+    "title": "Demystifying On-Policy Distillation: Roles, Pathologies, and Regulations",
+    "abstract": "On-policy distillation (OPD) has become a key paradigm in LLM post-training, yet its training dynamics remain poorly understood. We present a systematic study examining the role, pathologies, and regulations of OPD. We first clarify the role of OPD as an exploration catalyst: it steers the student toward correct reasoning paths via dense token-level guidance, without expanding capability ceiling. We confirm this by showing that prompt diversity matters more than per-problem sampling numbers, and critically, that the effectiveness of OPD hinges entirely on the quality of its guiding signal. This dependency exposes two pathologies that derail exploration. The Student-Teacher Mismatch occurs when a large teacher-student distributional gap causes the guiding signal to misalign with task correctness, steering exploration in counterproductive directions. Length Exploitation arises when the aggregated token-level objective creates length-dependent shortcuts, allowing the student to game the reward landscape through response truncation or redundant padding, exploring degenerate length modes rather than reasoning strategies. To tame these pathologies, we investigate lightweight signal regulations: advantage clipping and log-scale compression, ensuring exploration is guided by faithful signals. Experiments across seven benchmarks demonstrate that these regulations alleviate length exploitation and enable effective distillation, stably surpassing OPD variants and RLVR baselines, thereby confirming that well-regulated signal quality, rather than mere teacher scale, governs successful exploration in OPD.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-15",
+    "affiliations": [
+      "Chinese University of Hong Kong",
+      "Tencent (China)"
+    ]
+  },
+  "2606.24143": {
+    "id": "2606.24143",
+    "title": "AsyncOPD: How Stale Can On-Policy Distillation Be?",
+    "abstract": "On-policy distillation (OPD) trains a student on its own rollouts guided by teacher feedback and is becoming increasingly important for large language model (LLM) post-training. Like reinforcement learning (RL), however, OPD faces an on-policy systems bottleneck, as rollouts can dominate training time for reasoning workloads. Asynchronous training pipelines can alleviate this bottleneck by decoupling rollout generation from learner updates, but doing so introduces stale-policy data. While prior work has studied stale data in asynchronous RL, its effects in OPD remain underexplored. We present the first systematic study of staleness in asynchronous OPD, focusing on a practical setting where teacher feedback is implemented through local KL losses and full-vocabulary teacher logits are too expensive to store or transfer, necessitating finite teacher-score caches. We first show that KL direction changes the stale-data problem: teacher-weighted forward KL is more robust to stale rollouts, whereas student-weighted reverse KL is vulnerable. Second, for this vulnerable reverse-KL case, we study whether methods designed to stabilize asynchronous RL can mitigate OPD staleness. In our experiments, they do not improve over a simpler OPD-specific surrogate: recomputing the reverse-KL signal under the current student at learner time. Third, we analyze how finite teacher-score caches create a bias-variance tradeoff for sparse and sampled reverse-KL OPD estimators. This motivates multi-sample Monte Carlo (MC), which preserves MC correctability while reducing one-sample variance. Finally, we present and open-source AsyncOPD, a fully asynchronous OPD training pipeline built from these estimator choices. Experiments show that AsyncOPD improves training throughput by $1.6\\times$ to $3.8\\times$ over strict synchronous training while reaching comparable accuracy.",
+    "discovery": "OpenAlex",
+    "date": "2026-06-23",
+    "affiliations": [
+      "Ajou University",
+      "Microsoft (United States)",
+      "Robotics Research (United States)",
+      "University of California, Berkeley"
+    ]
+  },
+  "2605.07505": {
+    "id": "2605.07505",
+    "title": "LiteGUI: Lightweight GUI Agents via Multi-Solution Guided Distillation and Dual-Level Reinforcement Learning",
+    "abstract": "We present LiteGUI, a new framework for building lightweight GUI agents. GUI interaction poses unique challenges due to the long-horizon nature of complex tasks and the existence of multiple valid interaction paths, which are difficult for lightweight GUI agents to handle effectively. To address these challenges, LiteGUI introduces a two-stage post-training framework operating on logged GUI states. First, we propose Guided On-Policy Distillation, which provides training-time privileged teacher guidance at each GUI state by selecting the most-matched valid action from human-verified multi-solution action annotations, while leaving the student's on-policy rollout unchanged. Second, we develop Multi-Solution Dual-Level GRPO, which combines action-level supervision with history-conditioned, per-state planning-quality supervision while accounting for multiple valid actions at each logged GUI state. Together, these stages support multi-step GUI tasks without requiring the student to reproduce fixed demonstration trajectories. We further develop a scalable data generation pipeline and a corresponding multi-solution dataset, Lite-Dataset, to support the training and evaluation of GUI agents, addressing a gap in the existing literature. Extensive experiments across multiple GUI benchmarks demonstrate that LiteGUI substantially improves the performance of lightweight GUI agents over existing training paradigms, including SFT, on-policy distillation and GRPO, and achieves competitive or superior performance compared with substantially larger models.",
+    "discovery": "OpenAlex",
+    "date": "2026-05-08",
+    "affiliations": []
+  },
+  "2601.04237": {
+    "id": "2601.04237",
+    "title": "SAGE-32B: Agentic Reasoning via Iterative Distillation",
+    "abstract": "We demonstrate SAGE-32B, a 32 billion parameter language model that focuses on agentic reasoning and long range planning tasks. Unlike chat models that aim for general conversation fluency, SAGE-32B is designed to operate in an agentic loop, emphasizing task decomposition, tool usage, and error recovery. The model is initialized from the Qwen2.5-32B pretrained model and fine tuned using Iterative Distillation, a two stage training process that improves reasoning performance through rigorously tested feedback loops. SAGE-32B also introduces an inverse reasoning approach, which uses a meta cognition head to forecast potential failures in the planning process before execution. On agentic reasoning benchmarks including MMLU-Pro, AgentBench, and MATH-500, SAGE-32B achieves higher success rates in multi tool usage scenarios compared to similarly sized baseline models, while remaining competitive on standard reasoning evaluations. Model weights are publicly released at https://huggingface.co/sagea-ai/sage-reasoning-32b",
+    "discovery": "OpenAlex",
+    "date": "2026-01-04",
+    "affiliations": [
+      "ETH Zurich",
+      "Fudan University",
+      "Tribhuvan University"
+    ]
+  },
+  "2608.08570": {
+    "id": "2608.08570",
+    "title": "FailForge: Distilling Procedural Competence from Persistent Failures into Code Agents",
+    "abstract": "Rejection sampling fine-tuning (RFT) is widely used to train code agents by generating trajectories on verifiable software engineering tasks, retaining those that pass the tests, and fine-tuning on the successful rollouts. However, even strong code agents repeatedly fail on a substantial fraction of such tasks, and standard RFT simply discards these failures. The discarded samples are precisely the hardest and most informative ones, drawn from verifiable instances that are costly to curate. Stronger base models may reduce the number of failures, but the remaining hard cases still define the frontier for further improvement. We propose FailForge, an agentic framework that converts failed rollouts into training signal. For each failed instance, an agent diagnoses the failure from error feedback and execution traces, distills the diagnosis into a concise and actionable skill, and injects the skill into the agent context for a guided second attempt. Trajectories that succeed under skill guidance are folded back into the RFT corpus. Crucially, the skill is removed at training time, so the model internalizes the recovered behavior rather than relying on external hints at inference. FailForge recovers over 26% of previously failed instances at marginal additional cost, and training Qwen3.5-4B on the augmented corpus improves the SWE-bench Verified resolve rate by 6.6 points over a strong RFT baseline, with gains concentrated on the hardest problems.",
+    "discovery": "OpenAlex",
+    "date": "2026-08-09",
+    "affiliations": [
+      "Future Academy",
+      "Xi'an Jiaotong University"
+    ]
+  },
+  "2606.18890": {
+    "id": "2606.18890",
+    "title": "Skill-Guided Continuation Distillation for GUI Agents",
+    "abstract": "Improving GUI agents typically relies on behavior cloning on expert trajectories. However, as the current policy deviates from the expert policy, it inevitably encounters policy-induced off-trajectory states during closed-loop execution, i.e., states that fall outside the expert trajectories. Since expert trajectories provide no demonstrations for these unseen states, such states receive no effective supervision, leaving the policy unable to select the correct action. To close this supervision gap, we propose Skill-Guided Continuation Distillation (SGCD), an iterative self-improvement framework. SGCD first runs the plain policy without skill guidance for a few steps to reach realistic off-trajectory states. From these states, a skill-guided policy then completes the task and produces successful continuations, which are mixed with expert trajectories to supply supervision over policy-induced off-trajectory states. The skills are extracted from both successful and failed rollouts, consisting of Continuation Plans, Critical Targets, Failure Traps, and Success Criteria. On OSWorld-Verified, SGCD improves the success rate of three base models from the low-30\\% range to over 50\\%, demonstrating its effectiveness and generality.",
+    "discovery": "OpenAlex",
+    "date": "2026-06-17",
+    "affiliations": [
+      "Nanyang Technological University",
+      "Tsinghua University",
+      "University of Science and Technology Beijing"
+    ]
+  },
+  "2606.01993": {
+    "id": "2606.01993",
+    "title": "MMG2Skill: Can Agents Distill In-the-Wild Guides into Self-Evolving Skills?",
+    "abstract": "Abundant procedural knowledge on the Web holds great potential for helping agents solve long-horizon tasks. However, such knowledge is often multimodal, heterogeneous, noisy, and implicitly assumes human executors, making it difficult to use directly as the skills required by agents. To bridge the gap between human-oriented guides and agent-executable skills, we formalize this problem as guide-to-skill learning: converting in-the-wild guides into executable skills and continuously improving them from trajectories observable to the agent. To evaluate the capability of existing agents on this task, we introduce MMG2Skill-Bench, the first benchmark designed for this problem. We further propose MMG2Skill, a closed-loop framework that compiles guides into editable skills, conditions a fixed vision-language model (VLM) agent on these skills during execution, and revises the skills from trajectory-level root-cause feedback without using benchmark scores. Across GUI control, open-ended gameplay, and strategic card play with six VLM backbones, MMG2Skill consistently outperforms vanilla baseline agents in every model-domain setting, achieving macro-average gains of +12.8 to +25.3 percentage points across backbones. Ablation studies show that directly prompting agents with raw guides can degrade performance, while both structured skill construction and trajectory-driven revision are necessary for the observed improvements. On success-inferable tasks, analyzer-based early stopping further prevents late-stage performance regressions and saves 25%-53% of attempts when the success signal is properly calibrated.",
+    "discovery": "OpenAlex",
+    "date": "2026-06-01",
+    "affiliations": [
+      "Kuaishou (China)",
+      "Nanjing University"
+    ]
+  },
+  "2609.21423": {
+    "id": "2609.21423",
+    "title": "DENSE: Distilling Agent Trajectories into Evidence-Grounded Shortcut Trees for Self-Refinement",
+    "abstract": "Online agent deployments accumulate execution trajectories at massive scale and behavioral diversity, for which predefined annotation criteria hardly exist. Extracting useful evidence therefore demands costly manual annotation or verifier signals that fail to scale, leaving valuable evidence buried among redundant, incomplete, and failed executions. This raises a question: without post-execution rewards or correctness labels, how can reusable experience be distilled from the trajectories themselves? To address this challenge, we introduce DENSE (Distilling Evidence from Nested Subtask Executions), which organizes trajectory-derived evidence into nested shortcut trees. By consolidating redundant attempts, identifying resolved subtasks, and retaining useful steps alongside outstanding requirements, DENSE transforms noisy execution traces into structured and reusable task-solving feedback. To evaluate whether such feedback helps agents retry the same task, we design REFIT, which measures success-rate changes between the initial attempt and feedback-guided retries. Among feedback methods without external outcome supervision, DENSE achieves the highest strict pass rate across four agent models on Terminal-Bench 2.1, improving over initial attempts by 7.12-21.81 percentage points with 19.0-43.6% fewer agent tokens on retries. In addition, on hard tasks DENSE consistently outperforms self-reflection in cumulative pass rate across multiple feedback iterations on all four models, demonstrating its strong potential for continual agent self-improvement.",
+    "discovery": "OpenAlex",
+    "date": "2026-09-18",
+    "affiliations": [
+      "Fudan University",
+      "Meituan (China)"
+    ]
+  },
+  "2608.18524": {
+    "id": "2608.18524",
+    "title": "DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents",
+    "abstract": "Equipping Large Language Models (LLMs) with multi-turn tool-calling capabilities is essential for building autonomous agents. However, progress is fundamentally limited by the reliance on full-length trajectory imitation. For tasks involving multiple order-independent sub-goals, the optimal solution space forms a vast combinatorial diamond lattice. Forcing this rich topology into monolithic trajectories causes a severe topological collapse, indiscriminately penalizing valid alternative explorations and severely degrading policy diversity. To address this, we propose DART-SD (Diamond-topology Aware Retrieval and Tuning for Self-Distillation), a novel framework that shifts the paradigm from global forcing to topology-guided localized correction. DART-SD first models the execution process as a converging Interaction-State Transition Graph (ISTG), faithfully capturing the inherent diamond topology of successful and failed exploratory paths. During autonomous rollouts, the framework identifies the Critical Topological Breakpoint (CTB) and retrieves success-supported recovery references. Finally, we introduce a progressive self-distillation paradigm through CTB-guided localized supervision, ensuring that the training loss is calculated exclusively on the generated recovery steps while strictly protecting the valid reasoning prefix from destructive gradient updates. Experiments on complex multi-turn tool-calling benchmarks demonstrate that DART-SD significantly outperforms traditional full-trajectory baselines.",
+    "discovery": "OpenAlex",
+    "date": "2026-08-19",
+    "affiliations": [
+      "University of Science and Technology of China"
+    ]
+  },
+  "2610.19834": {
+    "id": "2610.19834",
+    "title": "Teaching Agents in their Own Style: Blackbox Teacher Distillation for Web Agents",
+    "abstract": "Frontier web agents using closed models have high inference and computational costs. Smaller open models can be an alternative, but to be performant, they require training supervision from a human or teacher model. Token-level teacher distillation is not an option for closed teachers as it needs access to the model's logits. The standard approach is to imitate teacher demonstrations offline, but it trains the student on states it has never visited, and in a style it does not write in. We introduce WebKD, where the teacher is the editor of the student's failures. Given a failed episode, the teacher finds the first point of mistake, and rewrites the student's reasoning traces, harness states, and actions from that point onward. The editing reveals that the teacher's corrections can be more surprising to the student than the student's own text. WebKD instead aims to edit minimally. In the data space, the teacher writes each correction in the student's style. In the objective space, the reasoning is weighted by its contribution to the action. A role-asymmetric KL anchor allows the corrected action to move freely while keeping the reasoning near the student's prior. On the TimeWarp benchmark, WebKD students gain about 5.5-10.7 pp over behavior cloning, outcome-reward RL, and teacher editing baselines. The performance transfers to unseen versions and to the live web in the OnlineMind2Web benchmark. WebKD opens a new way of distilling black-box models to improve the capabilities of open-weight web agents.",
+    "discovery": "OpenAlex",
+    "date": "2026-10-14",
+    "affiliations": [
+      "University of Utah"
+    ]
+  },
+  "2606.09447": {
+    "id": "2606.09447",
+    "title": "AliyunConsoleAgent: Training Web Agents in Real-World Cloud Environments via Distillation and Reinforcement Learning",
+    "abstract": "We present AliyunConsoleAgent, a web agent framework for automated documentation verification in real-world cloud consoles. Major cloud platforms encompass hundreds of products with rapid feature iteration, causing console UIs to frequently diverge from their corresponding documentation. Verifying that documented procedures accurately reflect the current console and can be executed end-to-end demands an estimated 4 million recurring inspections annually, yet manual coverage remains below 1%. While agent systems built on frontier proprietary models achieve high success rates, their prohibitive cost and data privacy constraints preclude large-scale deployment. We propose a two-stage training paradigm: supervised fine-tuning (SFT) on distilled frontier-model trajectories, followed by reinforcement learning using Group Relative Policy Optimization (GRPO) and a dual-channel outcome reward model in real cloud environments. To support large-scale RL training, we construct a high-determinism rollout system featuring Terraform-based resource pre-provisioning and LLM-driven on-demand provisioning, which effectively isolates environment noise from the training signal. We further introduce a rule-based reward evaluation protocol grounded in backend audit logs, providing objective, reward-hacking-resistant outcome judgment. Our model evolves from mechanical instruction following to autonomous decision-making with cloud console and product-specific understanding. Experiments on a challenging 278-task benchmark where the best frontier model achieves only 65.34% demonstrate that AliyunConsoleAgent-32B achieves a 63.52% mean success rate -- a 20.24 percentage-point improvement over the base model, narrowing the gap to the best frontier proprietary model to 1.82 pp (bootstrap 95% CI [-1.27, 7.39]) -- at 92% lower inference cost.",
+    "discovery": "OpenAlex",
+    "date": "2026-06-08",
+    "affiliations": [
+      "Cloud Computing Center"
+    ]
+  },
+  "2607.07820": {
+    "id": "2607.07820",
+    "title": "DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Environment",
+    "abstract": "Training tool-use agents to improve from their own experience remains challenging, as supervised fine-tuning relies on fixed teacher-distilled trajectories, while sparse-reward reinforcement learning provides weak supervision for long-horizon interactions. We present DeepSearch-Evolve, a self-distillation framework for web agents built on DeepSearch-World, a deterministic and verifiable environment with reproducible search and page-reading tools. DeepSearch-World contains 420K multi-hop QA tasks constructed from entity-level random walks and supports key agentic cognitive behaviors useful for self-evolving, including progress verification, grounded reflection, and failure recovery. DeepSearch-Evolve iteratively performs trajectory generation, filtering, data mixing, and fine-tuning to train stronger agents. Without distillation from more capable models, DeepSearch-World-9B achieves competitive performance compared with open-source agents, reaching 31.2% on BrowseComp, 61.5% on GAIA, and 93.4% on HotpotQA, showing that verifiable environments enable scalable self-evolution for long-horizon web agents. We will release the environment, 420K training pool, validation set, model, and code to facilitate future research on self-improving deep search agents.",
+    "discovery": "OpenAlex",
+    "date": "2026-07-08",
+    "affiliations": [
+      "HKUST Shenzhen Research Institute",
+      "The Hong Kong University of Science and Technology (Guangzhou)"
+    ]
+  },
+  "2603.01455": {
+    "id": "2603.01455",
+    "title": "From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck for Long-Horizon Video Agents",
+    "abstract": "While multimodal large language models have demonstrated impressive short-term reasoning, they struggle with long-horizon video understanding due to limited context windows and static memory mechanisms that fail to mirror human cognitive efficiency. Existing paradigms typically fall into two extremes: vision-centric methods that incur high latency and redundancy through dense visual accumulation, or text-centric approaches that suffer from detail loss and hallucination via aggressive captioning. To bridge this gap, we propose MM-Mem, a pyramidal multimodal memory architecture grounded in Fuzzy-Trace Theory. MM-Mem structures memory hierarchically into a Sensory Buffer, Episodic Stream, and Symbolic Schema, enabling the progressive distillation of fine-grained perceptual traces (verbatim) into high-level semantic schemas (gist). Furthermore, to govern the dynamic construction of memory, we derive a Semantic Information Bottleneck objective and introduce SIB-GRPO to optimize the trade-off between memory compression and task-relevant information retention. In inference, we design an entropy-driven top-down memory retrieval strategy. Extensive experiments across 4 benchmarks confirm that MM-Mem achieves state-of-the-art performance on both offline and streaming tasks, demonstrating robust generalization and validating the effectiveness of cognition-inspired memory organization. Code and associated configurations are publicly available at https://github.com/EliSpectre/MM-Mem.",
+    "discovery": "OpenAlex",
+    "date": "2026-03-02",
+    "affiliations": [
+      "Harbin Institute of Technology",
+      "Tsinghua Shenzhen International Graduate School",
+      "Tsinghua University"
+    ]
+  },
+  "2608.07169": {
+    "id": "2608.07169",
+    "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+    "abstract": "Memory systems have shown promise for improving agent performance, but their potential remains largely unexplored for small language models, which struggle to generate sufficient successful trajectories on their own. We propose Agent Memory Distillation (AMD), a training-free framework that transfers structured knowledge from a large teacher agent to a small student agent through hierarchical memory. AMD constructs three complementary memory types from successful teacher trajectories: Workflow memory encodes task-level strategies, Subtask memory provides concrete behavioral examples at an intermediate granularity, and Function memory captures per-function calling conventions and common pitfalls. Workflow and Subtask memories are injected proactively at the start of each task, while Function memory is retrieved reactively upon tool-calling errors. We evaluate AMD on three tool-use benchmarks using four student models (4B-8B parameters) with GPT-5-mini as the teacher, achieving average accuracy gains of 27.2%p, 11.2%p, and 3.4%p on AppWorld, BFCL V3, and ToolSandbox, while consistently outperforming existing memory-based baselines. Further analysis shows that Subtask memory contributes the largest gains, teacher effectiveness depends on both teacher capability and student compatibility, and 4B-sized students benefit most from AMD.",
+    "discovery": "OpenAlex",
+    "date": "2026-08-07",
+    "affiliations": [
+      "Korea Advanced Institute of Science and Technology"
+    ]
+  },
+  "2605.15155": {
+    "id": "2605.15155",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2609.33391": {
+    "id": "2609.33391",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2609.36642": {
+    "id": "2609.36642",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2609.34810": {
+    "id": "2609.34810",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2609.20784": {
+    "id": "2609.20784",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.31077": {
+    "id": "2608.31077",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.24114": {
+    "id": "2608.24114",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.14945": {
+    "id": "2608.14945",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.09555": {
+    "id": "2608.09555",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.05987": {
+    "id": "2608.05987",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.04788": {
+    "id": "2608.04788",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.03223": {
+    "id": "2608.03223",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2608.01837": {
+    "id": "2608.01837",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2607.28076": {
+    "id": "2607.28076",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2607.27937": {
+    "id": "2607.27937",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2607.24280": {
+    "id": "2607.24280",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2607.14777": {
+    "id": "2607.14777",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2606.29502": {
+    "id": "2606.29502",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2606.29476": {
+    "id": "2606.29476",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2606.27814": {
+    "id": "2606.27814",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2606.26790": {
+    "id": "2606.26790",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2605.27140": {
+    "id": "2605.27140",
+    "discovery": "SDAR Powered by SDAR + SDAR"
+  },
+  "2604.02268": {
+    "id": "2604.02268",
+    "discovery": "SDAR related news/citations"
+  },
+  "2605.06130": {
+    "id": "2605.06130",
+    "discovery": "SDAR related news/citations"
+  },
+  "2607.26784": {
+    "id": "2607.26784",
+    "discovery": "SDAR related news/citations"
+  },
+  "2608.23318": {
+    "id": "2608.23318",
+    "discovery": "SDAR related news/citations"
+  },
+  "2601.20802": {
+    "id": "2601.20802",
+    "discovery": "Citation tracing"
+  },
+  "2604.03128": {
+    "id": "2604.03128",
+    "discovery": "Citation tracing"
+  },
+  "2603.16856": {
+    "id": "2603.16856",
+    "discovery": "Citation tracing"
+  },
+  "2609.39436": {
+    "id": "2609.39436",
+    "discovery": "Citation tracing"
+  }
+}

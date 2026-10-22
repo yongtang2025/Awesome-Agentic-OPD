@@ -1,5 +1,150 @@
 # Agentic OPD 收录范围核验
 
+## LLM 补检：SDAR 与引用追踪（2026-10-22）
+
+**当前结果：LLM Agentic OPD 16 → 78 篇，新增 62 篇；全目录 38 → 100 篇。** 其他分类维持 Multimodal 9、Embodied 12、Video 0、Audio 0、AGS 1。新增数按独立 arXiv ID 计数，其中含 1 篇专项比较评测研究，不将其写成新算法。
+
+种子来源：[SDAR 仓库](https://github.com/ZJU-REAL/SDAR)。其 “Awesome Work Powered by SDAR” 有 21 个不同论文 ID，加上 SDAR 本身共 22 篇，与补检前的 16 篇 LLM 条目没有重合；本轮全部纳入。另外通过已有索引及引用追踪核实 40 篇。GitHub 直连失败后，使用 [master 分支的 README 镜像](https://cdn.jsdelivr.net/gh/ZJU-REAL/SDAR@master/README.md) 读取清单，并逐篇回到 arXiv 主来源核验。
+
+覆盖：筛查 110 个未在原目录中的候选，逐条读取 arXiv 摘要；对 34 篇取得正文并重点检查相关方法/评测段落。扩展入口使用同日已有 OpenAlex 检索结果及论文引用；本轮新增 OpenAlex 请求返回 429，因此不声称穷尽全部文献。这里记录的是收录范围判断，不是全文科学审稿或实验复现。
+
+筛选同时要求任务交互与 on-policy 蒸馏证据。交互可来自环境、工具、数据库、代码执行、用户模拟器，或独立智能体之间影响下一轮决策的消息；单模型内部推理或教师侧讨论本身不足以确立 Agent 任务。OPD 可以表现为分布/表示/动作对齐、教师在学生访问状态上的纠正，或基于学生 rollout 重评分的密集信用信号；相应实现类型在网页中分别标注。
+
+边界处理：MAS-OPD 属于独立角色策略间的通信闭环；ReOPD/OEL/ReSAIL 区分固定环境历史与新采样的学生回答；WebKD 区分固定学生访问状态上的逐状态纠正与教师接管后产生新状态的 continuation SFT；OVD 明确标注仍使用推理期教师反馈的设置。SDAR 中的 credit-shaping 方法不统一描述为独立 reverse-KL 损失。
+
+元数据：题名、arXiv ID 和日期由主来源确认；代码链接来自论文或 SDAR 的明确链接。未核实的单位填 `—`；新增 stars/citations 填空值，不以 0 代替未知。
+
+### SDAR 入口：22 篇全部覆盖
+
+| 论文 / 主来源 | 方法类型 | 交互与蒸馏依据 |
+| :-- | :-- | :-- |
+| [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) | OPSD+RL | 环境动作和反馈构成多轮轨迹；技能条件自教师重评分学生 token，门控蒸馏与 RL 联合优化。 |
+| [Beyond Timestamps: Decision-Aligned On-Policy Distillation for Long-Horizon Agents](https://arxiv.org/abs/2609.33391) | OPSD-guided RL: decision credit | 真实交互轨迹中按功能决策对齐同胞 rollout；学生动作的特权重评分用于分层信用分配。 |
+| [PR-OPD: Privileged Representation On-policy Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.36642) | representation OPSD+RL | ALFWorld/WebShop 交互；同一学生回答上的隐藏表示蒸馏，不能因没有 token-logit loss 而遗漏。 |
+| [UniOPSD: Unifying Outcome and Hindsight Feedback for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.34810) | OPSD-guided RL: credit arbitration | 环境回报与学生交互锚点上的 hindsight 自蒸馏共同构造决策信用。 |
+| [RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.20784) | OPD+RL | 环境中先训练技能教师，再在学生交互轨迹上联合 OPD/RL，并自适应停止蒸馏。 |
+| [Reconciling Process Supervision with Outcome-Based Credit in Agentic Policy Optimization](https://arxiv.org/abs/2608.31077) | OPSD-guided RL: action credit | 可执行动作上的特权似然差用于重分配 RL 信用；属于交互式 OPSD 信号引导的训练。 |
+| [AHEAD: Adaptive Hindsight with Environment-Augmented Distillation for Agentic RL](https://arxiv.org/abs/2608.24114) | OPSD+RL | 学生执行动作并接收环境反馈；错误步骤另加教师纠正提示进行自蒸馏。 |
+| [Trust Is Not Enough: Influence Calibration for On-Policy Self-Distillation in Agentic RL](https://arxiv.org/abs/2608.14945) | OPSD+RL | 学生交互轨迹上的特权教师监督，用 RL 目标的局部影响校准 token 蒸馏权重。 |
+| [Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents](https://arxiv.org/abs/2608.09555) | OPSD-guided RL: context contrast | 在实际环境轨迹上用两种技能上下文重评分，并将自蒸馏信号并入 RL。 |
+| [AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.05987) | OPSD-guided RL: recursive credit | 学生动作—观察轨迹上聚合教师差值，并递归更新 turn-level 信用。 |
+| [Agentic Reinforcement Learning with Observation-Calibrated Self-Distillation](https://arxiv.org/abs/2608.04788) | OPSD-guided RL: observation residual | 真实环境未来观察用于训练期反事实重评分；学生 token 上的自蒸馏残差信号指导 RL。 |
+| [Agentic Reinforcement Learning with Self-Distilled Reward Shaping](https://arxiv.org/abs/2608.03223) | OPSD-guided RL: reward shaping | 无技能学生交互轨迹上重评分固定动作 token，以回报相关性门控并形成密集信用。 |
+| [PCSD: Persistent Consistency for Self-Distillation in Agentic Reinforcement Learning](https://arxiv.org/abs/2608.01837) | OPSD+RL | 多轮环境轨迹上以持续一致的教师信号加权 on-policy 自蒸馏。 |
+| [Group-Reflective Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.28076) | OPSD-guided RL: group reflection | 当前策略的成功/失败交互组形成特权反思，由自教师重评分并校准 turn 信用。 |
+| [From Scoring to Acting: Outcome-Verified Comparative Self-Distillation for LLM Agents](https://arxiv.org/abs/2607.27937) | outcome-verified self-distillation+RL | 教师从学生访问状态实际执行并验证结果；局部比较学习加后缀蒸馏，非仅筛选整条成功轨迹。 |
+| [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](https://arxiv.org/abs/2607.24280) | OPSD+RL | 学生交替推理与检索；协议条件自教师提供学生轨迹上的 token 分布监督。 |
+| [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | OPSD+RL | 当前智能体产生交互轨迹并提炼技能；其概率变化形成 on-policy 密集蒸馏信号。 |
+| [UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation](https://arxiv.org/abs/2606.29502) | bidirectional OPSD+RL | 同一任务/状态下执行双上下文策略，以环境回报确定局部蒸馏方向。 |
+| [CRAFT: Counterfactual Credit Assignment from Free Sibling Rollouts for Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2606.29476) | OPSD+RL | 交互式学生同胞 rollout 的结果提供反事实信用，并调节特权自蒸馏。 |
+| [ATOD: Annealed Turn-Aware On-Policy Distillation for Multi-Turn Agentic Tasks](https://arxiv.org/abs/2606.27814) | OPD+RL | 实际环境中的多轮学生轨迹，采用 OPD/RL 退火和 turn-level 蒸馏重加权。 |
+| [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | OPSD+RL | 来自当前交互轨迹的分层技能指导同一学生动作 token 的 on-policy 重评分。 |
+| [StepOPSD: Step-Aware Online Preference Self-Distillation for Agent Reinforcement Learning](https://arxiv.org/abs/2605.27140) | OPSD-guided RL: step credit | 以环境动作步骤分解学生交互轨迹，将 hindsight 蒸馏信号转为 step-level 信用。 |
+
+### 扩展检索：新增 40 篇
+
+| 论文 / 主来源 | 方法类型 | 交互与蒸馏依据 |
+| :-- | :-- | :-- |
+| [Know When to Stop, Where to Restart: Accelerating Multi-Turn Agentic On-Policy Distillation](https://arxiv.org/abs/2609.14636) | OPD | tau2-bench 用户/工具交互，按教师支持度停止并从交互前缀重启 OPD。 |
+| [Look Ahead Before You Distill: Future Trajectory Validation of Teacher Guidance for Agentic On-Policy Distillation](https://arxiv.org/abs/2608.01953) | OPD | 教师桥接与学生续行均在环境中执行，以未来轨迹验证 OPD 指导。 |
+| [UOPD: Uncertainty-Aware Intervention for On-Policy Distillation of Multi-Turn Agents](https://arxiv.org/abs/2609.34036) | OPD with teacher intervention | 学生及教师动作实际改变环境；保留学生 turn 的 OPD，并在不确定步骤执行纠正。 |
+| [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | OPD | TIR 学生实际调用工具并接收结果；逐交互步骤调整 on-policy 蒸馏强度。 |
+| [On-Policy Distillation with Curriculum Turn-level Guidance for Multi-turn Agents](https://arxiv.org/abs/2606.15912) | OPD with curriculum intervention | 环境中混合执行教师/学生 turn，并按课程退火到学生自身交互。 |
+| [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](https://arxiv.org/html/2605.01347v1) | multi-teacher OPD | 正文 §4/App.B 记录用户模拟器及最多 300 个环境步；学生工具交互上的多教师 OPD。 |
+| [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/abs/2604.24005) | OPD | 在三类环境中采样学生动作—观察轨迹，按交互深度实施 OPD 课程。 |
+| [SAGE-OPD: Selective Agent-Guided Intervention for Multi-Turn On-Policy Distillation](https://arxiv.org/abs/2606.19659) | OPD | 先观察动作执行反馈，再决定哪些学生 turn 接受置信度加权蒸馏。 |
+| [MemOPD: On-Policy Distillation through Memory State Alignment for Long-Horizon Agents](https://arxiv.org/html/2608.07068v1) | OPD+RL | 多轮智能体的记忆改写与外部交互；在每次真实调用的学生动作位置上作状态对齐蒸馏。 |
+| [TurnOPD: Making On-Policy Distillation Turn-Aware for Efficient Long-Horizon Agent Training](https://arxiv.org/abs/2607.05804) | OPD | 真实环境交互上联合控制 rollout 深度与按 turn 分配的 OPD 损失。 |
+| [OPRD: On-Policy Reminder Distillation for Long-Horizon Coding Agents](https://arxiv.org/abs/2610.21496) | OPSD | 代码智能体使用仓库工具及测试反馈；失败学生轨迹上实施 reminder-conditioned reverse-KL。 |
+| [Graph-Conditioned On-Policy Agent Distillation from Off-the-Shelf Teachers](https://arxiv.org/abs/2609.37522) | OPD | 执行图中的环境历史增强教师上下文，监督学生自身交互中的 thought/action token。 |
+| [GAPD: Gold-Action Policy Distillation for Agentic Reinforcement Learning in Knowledge Base Question Answering](https://arxiv.org/abs/2605.29584) | OPSD+RL | 学生执行知识库查询并观察实体反馈；状态锚点对齐后进行动作 token 自蒸馏。 |
+| [Keep Policy Gradient in Charge: Sibling-Guided Credit Distillation for Long-Horizon Tool-Use Agents](https://arxiv.org/abs/2606.12634) | OPSD-guided RL: credit weighting | AppWorld/tau3 的工具反馈闭环；学生同胞轨迹上的教师分歧构造有界 RL 信用。 |
+| [The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation](https://arxiv.org/html/2607.24720v1) | analysis+multi-teacher OPD | 正文 §2–3 的库存状态随合成动作更新；OPAD 在学生自探索交互轨迹上优化。 |
+| [Branching On-Policy Distillation](https://arxiv.org/abs/2610.13481) | OPD | ALFWorld/WebShop 的 turn 内决策分支与后续环境行为；对学生分支施加 OPD。 |
+| [Step-Level On-Policy Distillation: Interpolating Between On-Policy Distillation and Supervised Fine-Tuning](https://arxiv.org/html/2608.16333v1) | step-level OPD | 包含真实 ALFWorld 交互评测，以学生轨迹条件构造 step-level 蒸馏。 |
+| [Multi-Turn On-Policy Distillation with Prefix Replay](https://arxiv.org/abs/2607.04763) | OPD on replayed interaction prefixes | 学生在回放的工具历史上重新采样回答并接受教师监督；交互任务闭环评测，训练不新执行工具。 |
+| [Building Multi-Task Agentic LLMs via Two-Phase Distillation](https://arxiv.org/html/2606.30044v1) | off-policy initialization + OPD | 对话与文本游戏智能体的多任务整合；明确包含后续 on-policy 策略蒸馏阶段。 |
+| [SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation](https://arxiv.org/html/2608.21500v1) | OPD with agentic transfer evaluation | 正文 App.H 采用 AgentDojo v1.2.1 的实际工具任务与执行成功指标；不能仅因训练输入离线而排除。 |
+| [RISE: Recursive Improvement via Self-Extrapolating Policy Distillation](https://arxiv.org/html/2609.05295v1) | self-extrapolating OPD+RL | 正文 agentic 设置为 ALFWorld/WebShop；当前学生 rollout 上匹配自外推教师。 |
+| [Dense Is Not Enough: Hierarchical Supervision Allocation for Long-Horizon On-Policy Distillation](https://arxiv.org/html/2609.33409v1) | OPD | 教师干预收益由环境中的后续学生行为验证，再实施分层 OPD。 |
+| [DTDD: Divergence-Triggered Dynamic Distillation for Reliable On-Policy Supervision](https://arxiv.org/abs/2610.19302) | OPD with teacher recovery | ALFWorld/代码智能体中执行教师恢复；保留学生前缀 OPD，教师段另用行为克隆。 |
+| [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/html/2603.25562v2) | analysis+OPD | 正文 §4.3 与 App.G.1 明确在 ALFWorld/WebShop 训练和评测学生策略。 |
+| [On-Policy Context Distillation for Language Models](https://arxiv.org/html/2602.12275v2) | on-policy context distillation | 正文训练与评测包含 TextArena 的 Frozen Lake/Sokoban 动作反馈闭环。 |
+| [TIDE: Teacher-Student Transition via Informative Distillation and Exploration for Agentic RL](https://arxiv.org/abs/2609.35058) | OPD+RL | 交互式多轮任务中协调 OPD 与 RL，按动作价值和分歧分配 turn 监督。 |
+| [f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control](https://arxiv.org/abs/2605.17862) | asynchronous OPD | 工具与代码智能体的长交互轨迹上研究异步 OPD；控制 rollout/context 的陈旧偏移。 |
+| [Latent On-Policy Self-Distillation](https://arxiv.org/html/2608.13040v1) | latent-context OPSD | 以任务与交互历史采样学生轨迹，latent-context 自教师提供逐前缀监督。 |
+| [When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents](https://arxiv.org/abs/2608.05219) | OPSD+RL | 根据学生实际到达的环境状态匹配参考，再对当前学生回答进行自蒸馏。 |
+| [ReSAIL: Mitigating Collapse in Iterative Agent Self-Distillation](https://arxiv.org/html/2609.39306v1) | OPSD on offline interaction histories | 正文 §3.1 明确 OEL 集成每次更新重新采样学生回答；保留该 on-policy 分支并注明回放历史。 |
+| [More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning](https://arxiv.org/abs/2610.19789) | benchmark / comparative study | 纯比较/基准论文，直接复评交互式 Agentic OPSD；计为论文，不能计作新算法。 |
+| [RISED: RubrIcs for agentic multi-environment Selection and sElf-Distillation](https://arxiv.org/html/2610.00979v1) | OPSD+RL | 跨交互环境采样学生 rollout，以正向 rubric 条件自教师提供 token-level OPSD。 |
+| [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/html/2604.10674v1) | OPSD+RL | AppWorld/Sokoban 实际交互；学生轨迹上技能条件教师的 importance-weighted reverse-KL。 |
+| [SERL-SQL: Selective Hindsight Distillation for Text-to-SQL Reinforcement Agentic Learning](https://arxiv.org/html/2608.00485v4) | OPSD-guided RL: execution credit | 正文定义数据库 action-observation 多轮轨迹，执行反馈用于学生 SQL/tool token 的自蒸馏信用。 |
+| [MAS-OPD: On-Policy Distillation for Multi-agent Systems](https://arxiv.org/html/2609.34234v1) | joint multi-agent OPD | 正文 §2.1 为独立学生策略之间的多轮通信反馈闭环；联合轨迹上的 OPD，不是单模型内部 CoT。 |
+| [OVD: On-policy Verbal Distillation](https://arxiv.org/html/2601.21968v2) | verbal mixed-policy distillation+RL | 正文 App.A.10 明确训练期搜索模拟器与测试期 Serper 搜索交互；需区分推理时仍有教师的配置。 |
+| [Online Experiential Learning for Language Models](https://arxiv.org/html/2603.16856) | on-policy context distillation from deployment | 部署交互轨迹提炼经验，当前学生采样的回答接受 OPCD；正文评测 Frozen Lake/Sokoban。 |
+| [DASH-OPD: Discrepancy-Aware Switching with Hysteresis for On-Policy Distillation](https://arxiv.org/abs/2607.29078) | OPD with bidirectional intervention | 学生/教师在环境交互中双向切换执行，按连续 turn 的分歧证据进行 on-policy 蒸馏。 |
+| [From Imitation to Reward Discovery: On-Policy Warmup for Agentic RL](https://arxiv.org/abs/2609.39436) | OPD warmup + RL | 先在学生自己访问的交互状态上进行 reverse-KL 蒸馏，再切换到 Agentic RL。 |
+| [Teaching Agents in their Own Style: Blackbox Teacher Distillation for Web Agents](https://arxiv.org/html/2610.19834v1) | state-level distillation on collected student rollouts | 正文明确每个教师改写都对齐学生实际访问的状态，避免教师接管后的新状态；以固定学生状态池上的动作级蒸馏收录并注明。 |
+
+### 未计入本轮 LLM 数量的 48 篇
+
+“证据不足”表示暂缓收录；“其他分类候选”不表示其不属于 Agentic OPD。尤其不能把 REOPOLD 的视觉工具实验写成非 Agent。
+
+| 候选 / 主来源 | 未计入原因 |
+| :-- | :-- |
+| [Harness Policy Distillation: Aligning Agent Policies with Runtime Semantics](https://arxiv.org/abs/2610.20261) | 有 harness 交互，但检查到的方法以参考轨迹回放和教师动作/控制语义监督为主；未核实学生采样轨迹上的 OPD 目标。 |
+| [Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation](https://arxiv.org/abs/2610.07250) | 蒸馏目标是图像扩散生成器，不能将外部 harness 的存在直接计作 LLM Agent 策略 OPD。 |
+| [Formal Verification of Learned Multi-Agent Communication Policies via Decision Tree Distillation](https://arxiv.org/abs/2606.19632) | 多机器人通信策略的决策树抽象与形式验证；非 LLM Agentic OPD 研究。 |
+| [Trust Region On-Policy Distillation](https://arxiv.org/abs/2606.01249) | 正文/摘要评测数学、代码生成与通用任务，未定位到动作执行后的反馈闭环。 |
+| [Inductive Feedback for Mixed-Policy Distillation](https://arxiv.org/html/2609.35390v1) | ToolAlpaca 是静态调用预测；交互证据来自具身视觉语言规划器 EmbodiedEval，作为具身候选记录，不计入本轮 LLM 数量。 |
+| [TIP: Token Importance in On-Policy Distillation](https://arxiv.org/html/2604.14084v4) | 报告 DeepPlanning，但所查段落未说明该实验实际执行工具及返回观察的配置；暂不计入，不能仅凭 agentic planning 标签认定。 |
+| [Scaling Reasoning Efficiently via Relaxed On-Policy Distillation](https://arxiv.org/html/2603.11137v1) | REOPOLD 正文确有视觉工具交互（VerlTool/Pixel-Reasoner）；属于多模态 Agentic OPD 候选，本轮不计入 LLM。 |
+| [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) | 通用 LLM OPD 综述，非专门的交互式 Agentic OPD 文献或其专项评测。 |
+| [Distillation as Probability Transport: Routed On-Policy Distillation](https://arxiv.org/abs/2609.08337) | RouteOPD 的已核实实验为数学推理。 |
+| [Contrastive On-Policy Distillation](https://arxiv.org/abs/2607.19046) | COPD 的已核实实验为固定输入多模态推理/理解。 |
+| [On the Off-Policy Teacher in On-Policy Distillation](https://arxiv.org/abs/2609.38360) | SCOUT 摘要描述推理领域，未定位到交互式 Agent 实验；保留为待进一步核验的通用 OPD 候选。 |
+| [OPRD: On-Policy Representation Distillation](https://arxiv.org/abs/2606.06021) | On-Policy Representation Distillation 的实验为数学；不同于收录的 coding-agent On-Policy Reminder Distillation。 |
+| [OPOD: On-Policy Omni Distillation](https://arxiv.org/abs/2607.20918) | OPOD 是固定输入的全模态能力整合，未建立 Agent 交互闭环。 |
+| [Trust Region Policy Distillation](https://arxiv.org/abs/2607.04751) | TOP-D 的已核实实验为数学推理。 |
+| [On-policy Distillation with Verifiable Reward](https://arxiv.org/abs/2608.24696) | OPDVR 的已核实实验为推理基准，未提供 Agent 执行反馈证据。 |
+| [Weak-to-Strong On-Policy Distillation](https://arxiv.org/abs/2607.26246) | W2S-OPD 原文主要评测数学与代码生成；不能把后续论文的 Agent 移植反算为原文证据。 |
+| [Training-Free On-Policy Distillation](https://arxiv.org/abs/2610.22236) | 训练自由的专家合并，原文评测数学与单次代码生成。 |
+| [Are Full Rollouts Necessary for On-Policy Distillation?](https://arxiv.org/abs/2605.31490) | POPD/TOPD 的 rollout horizon 是数学输出长度，不是已核实的环境交互深度。 |
+| [Flash-OPD: Fast On-Policy Distillation](https://arxiv.org/html/2610.06105v1) | Flash-OPD 正文训练 DAPO-Math，评测数学与 GPQA；其 closed-loop controller 指训练控制，不是 Agent 环境。 |
+| [Policy Alignment: New Signals for Membership Auditing in On-Policy Distillation](https://arxiv.org/abs/2610.11423) | 成员推断/隐私审计方法，未建立交互式 Agent OPD 任务。 |
+| [Escaping the KL Agreement Trap in On-Policy Distillation](https://arxiv.org/abs/2606.09471) | KAT 的已核实实验为数学推理。 |
+| [CV-OPD: Contrastive Vision On-policy Distillation](https://arxiv.org/abs/2610.13264) | CV-OPD 的视觉对比监督用于静态图像推理，未建立工具/环境闭环。 |
+| [Scaling Properties of Same-Family On-Policy Distillation](https://arxiv.org/abs/2609.32722) | 通用同族模型 OPD 缩放研究；当前摘要证据不足以确认 Agent 交互实验。 |
+| [ResOPD: Tail Residualization for Sparse On-Policy Distillation](https://arxiv.org/html/2610.04882v1) | ResOPD 正文评测数学、科学问答和单次代码生成。 |
+| [Flux-OPD: On-Policy Distillation with Evolving Contexts](https://arxiv.org/html/2607.28022v2) | Flux-OPD 主要评测视频提示词优化与医学 QA；未核实被训练学生的连续行动反馈闭环。 |
+| [Interactive-Policy Distillation with Bidirectional Propose-and-Verify](https://arxiv.org/abs/2609.36546) | IPD 的 interactive 指教师/学生协作生成数学推理；没有已核实的部署 Agent 交互任务。 |
+| [Pass the Baton: Trajectory-Relayed On-Policy Distillation](https://arxiv.org/abs/2607.26057) | Relay-OPD 的已核实实验为八个数学基准。 |
+| [Unbiased Top-$k$ Estimation for On-Policy Distillation](https://arxiv.org/html/2609.34447v2) | TT-OPD 正文评测数学与代码生成，未建立 Agent 执行反馈闭环。 |
+| [OPD+: Rethinking the Advantage Design for On-Policy Distillation](https://arxiv.org/html/2606.01039v1) | OPD+ 工具实验采用 ToolAlpaca 的 68 题调用预测设置；未核实执行后返回观察的多轮协议。 |
+| [Demystifying On-Policy Distillation: Roles, Pathologies, and Regulations](https://arxiv.org/html/2607.13399v1) | Demystifying OPD 正文的七个基准为数学推理。 |
+| [AsyncOPD: How Stale Can On-Policy Distillation Be?](https://arxiv.org/html/2606.24143v1) | AsyncOPD 正文主要评测数学，异步 rollout 不是环境交互证据。 |
+| [LiteGUI: Lightweight GUI Agents via Multi-Solution Guided Distillation and Dual-Level Reinforcement Learning](https://arxiv.org/abs/2605.07505) | LiteGUI 是多模态 GUI 候选，不计入本轮 LLM；其具体闭环评测仍需单独核查。 |
+| [SAGE-32B: Agentic Reasoning via Iterative Distillation](https://arxiv.org/abs/2601.04237) | SAGE-32B 的迭代轨迹蒸馏未核实为学生采样上的 OPD 目标。 |
+| [FailForge: Distilling Procedural Competence from Persistent Failures into Code Agents](https://arxiv.org/abs/2608.08570) | FailForge 通过失败恢复扩充代码训练语料；未核实独立 OPD 对齐目标。 |
+| [Skill-Guided Continuation Distillation for GUI Agents](https://arxiv.org/abs/2606.18890) | GUI SGCD 对教师接管后的成功 continuation 做 SFT；沿用首轮排除结论。 |
+| [MMG2Skill: Can Agents Distill In-the-Wild Guides into Self-Evolving Skills?](https://arxiv.org/abs/2606.01993) | MMG2Skill 更新外部可编辑技能并保持执行模型固定，非参数层面的 Agent OPD。 |
+| [DENSE: Distilling Agent Trajectories into Evidence-Grounded Shortcut Trees for Self-Refinement](https://arxiv.org/abs/2609.21423) | DENSE 将经验编为反馈树以辅助重试，未核实 OPD 策略更新。 |
+| [DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents](https://arxiv.org/html/2608.18524v1) | DART-SD 正文 §3.3–3.4 为教师参考条件生成恢复段后的 masked SFT，非学生采样回答上的 OPD 重评分。 |
+| [AliyunConsoleAgent: Training Web Agents in Real-World Cloud Environments via Distillation and Reinforcement Learning](https://arxiv.org/abs/2606.09447) | AliyunConsoleAgent 采用轨迹蒸馏与 RL；所查证据未建立 on-policy 蒸馏目标。 |
+| [DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Environment](https://arxiv.org/abs/2607.07820) | DeepSearch-Evolve 是生成、筛选、混合和 SFT；沿用首轮排除结论。 |
+| [From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck for Long-Horizon Video Agents](https://arxiv.org/abs/2603.01455) | 多模态视频记忆蒸馏，非本轮 LLM Agentic OPD 范围，且未核实动作反馈闭环。 |
+| [Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory](https://arxiv.org/abs/2608.07169) | AMD 将教师经验编为运行时记忆，未核实学生策略的 on-policy 参数蒸馏。 |
+| [SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization](https://arxiv.org/abs/2604.02268) | Skill0 是技能上下文课程与 RL，不能仅以 skill internalization 视为 OPD。 |
+| [Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning](https://arxiv.org/html/2605.06130) | Skill1 的 skill distillation 指从轨迹生成技能文档；未建立学生-教师策略分布 OPD。 |
+| [SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution](https://arxiv.org/abs/2607.26784) | SkillRise 是跨任务技能维护与 RL，未核实 OPD 监督。 |
+| [Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.23318) | Agent-G2 的前缀提示与深度采样服务于 RL，未核实 OPD 目标。 |
+| [Reinforcement Learning via Self-Distillation](https://arxiv.org/html/2601.20802) | SDPO 原文工具部分是静态 ToolAlpaca 调用预测；代码反馈/测试时适应不直接等于本清单的多轮 Agent 执行策略，暂不计入。 |
+| [Self-Distilled RLVR](https://arxiv.org/html/2604.03128) | RLSD 原文实验为静态多模态推理；SDAR 对其做 Agent 适配不改变原文范围。 |
+
+## 首轮范围清理记录（补检前）
+
+以下为之前从 102 篇筛至 38 篇的历史记录；其中的 16 篇 LLM 数量不是补检后的当前数量。
+
 核验日期：2026-10-22。模式：citation-audit / scope audit。检查对象：`papers.json`、生成的 `README.md` / `index.html` 及统计缓存。
 
 本次按用户要求检查两项条件：任务中有实际动作执行、返回观察或执行反馈及后续决策；方法中有作用于学生采样输出、动作生成路径或学生访问状态的明确蒸馏/目标策略对齐。普通 VLM 推理、视觉证据教师、内部迭代和论文中的 agent/rollout 字样均不能单独满足第一项。

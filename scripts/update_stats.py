@@ -182,7 +182,8 @@ def build_readme(src, stats):
       "A paper must establish both:")
     w("")
     w("1. **Agent interaction:** actions are executed through tools, software, a simulator, "
-      "a robot, or another external interface; returned observations or execution feedback "
+      "a robot, or another external interface, including task communication with users or "
+      "other independently acting agents; returned observations or feedback "
       "inform subsequent decisions.")
     w("2. **On-policy distillation:** an explicit teacher, self-teacher, or target-policy "
       "alignment objective trains the agent on student-generated actions, responses, action-flow "
@@ -197,6 +198,10 @@ def build_readme(src, stats):
       "contexts and still execute a closed-loop agent task. Embodied action-flow OPD, replay-based "
       "methods, and teacher-free target-policy variants are identified in the interactive reader; "
       "they are not described as fresh environment rollouts during distillation.")
+    w("")
+    w("Agentic OP(S)D also includes methods that convert teacher re-scoring of student interaction "
+      "trajectories into dense RL credit. The reader distinguishes these from standalone "
+      "distribution-matching losses, state-level teacher corrections, and comparative studies.")
     w("")
     w("See the [scope audit](ccfa-workfiles/checks/agentic-scope/scope-audit.md) for paper-level "
       "inclusion evidence and exclusions.")
@@ -440,11 +445,12 @@ def build_html(src, stats):
 
     fill = {
         "INTRO": t("This collection requires both an interactive agent task and an on-policy distillation objective. "
-                   "The agent executes actions through tools, software, or physical/simulated environments and uses returned feedback. "
+                   "The agent executes actions through tools, software, physical/simulated environments, or task-level communication "
+                   "with users and other agents, and uses the returned feedback. "
                    "Static multimodal QA and screenshot grounding alone are outside scope. "
                    "Offline training contexts are allowed when the resulting policy is evaluated in closed-loop interaction. "
                    "Click any paper for its method and interaction setting.",
-                   "本清单同时要求智能体交互任务和在策略蒸馏目标：智能体通过工具、软件或物理/仿真环境执行动作，并利用返回的反馈继续决策。"
+                   "本清单同时要求智能体交互任务和在策略蒸馏目标：智能体通过工具、软件、物理/仿真环境，或与用户及其他智能体的任务通信执行动作，并利用返回反馈继续决策。"
                    "仅有静态多模态问答或截图定位不予收录。使用离线上下文训练、但在闭环交互中评测的策略仍可收录。点击论文查看方法与交互设置。"),
         "TOTAL": str(total), "NCODE": str(ncode), "UPDATED": esc(updated), "REPO": REPO,
         "L_PAPERS": t("papers", "篇论文"), "L_CODE": t("with code", "篇有代码"),
