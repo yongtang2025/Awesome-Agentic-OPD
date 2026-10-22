@@ -176,6 +176,31 @@ def build_readme(src, stats):
       "while a teacher scores or corrects those student-generated samples. "
       "**OPSD** is the self-distillation case: the teacher is the same model, given privileged information.")
     w("")
+    w("### Inclusion criteria")
+    w("")
+    w("This collection covers **on-policy distillation of interactive agent policies**. "
+      "A paper must establish both:")
+    w("")
+    w("1. **Agent interaction:** actions are executed through tools, software, a simulator, "
+      "a robot, or another external interface; returned observations or execution feedback "
+      "inform subsequent decisions.")
+    w("2. **On-policy distillation:** an explicit teacher, self-teacher, or target-policy "
+      "alignment objective trains the agent on student-generated actions, responses, action-flow "
+      "states, or student-visited interaction states.")
+    w("")
+    w("Text decoding alone, fixed-image/video/audio QA, static screenshot-to-coordinate grounding, "
+      "teacher-provided crops, visual-token compression, and internal denoising steps do not "
+      "establish an agent interaction loop. Successful-trajectory or teacher-continuation SFT "
+      "alone is not sufficient evidence of OPD.")
+    w("")
+    w("Interaction and on-policy sampling are checked separately: a policy may train on offline "
+      "contexts and still execute a closed-loop agent task. Embodied action-flow OPD, replay-based "
+      "methods, and teacher-free target-policy variants are identified in the interactive reader; "
+      "they are not described as fresh environment rollouts during distillation.")
+    w("")
+    w("See the [scope audit](ccfa-workfiles/checks/agentic-scope/scope-audit.md) for paper-level "
+      "inclusion evidence and exclusions.")
+    w("")
     w(f"Search, filter and read a four-point summary of every paper in the **[interactive reader]({pages})** "
       f"([mirror]({preview})).")
     w("")
@@ -198,6 +223,9 @@ def build_readme(src, stats):
         noun = "paper" if len(ps) == 1 else "papers"
         w(f"{c['desc']} **{len(ps)} {noun}**, {len(coded)} with code.")
         w("")
+        if not ps:
+            w("No papers currently listed meet both the interaction and distillation criteria.")
+            w("")
         # Keep the five-column layout visible even before the first paper is added.
         if coded or not plain:
             w("| Paper | Affiliation | Date | Code | Cited |")
@@ -406,12 +434,18 @@ def build_html(src, stats):
         tab(c["key"], c.get("short") or c["title"], c["title_zh"].split(" ", 1)[-1], len(by[c["key"]])) for c in cats)
     secs = "\n".join(
         f'<section id="{c["key"]}">{t(c["title"], c["title_zh"], "h2")}{t(c["desc"], c["desc_zh"], "p")}'
-        f'<div class="list">{"".join(row(p) for p in by[c["key"]])}</div></section>' for c in cats)
+        + (t("No papers currently listed meet both the interaction and distillation criteria.",
+             "当前清单中尚无同时满足交互与在策略蒸馏标准的论文。", "p") if not by[c["key"]] else "")
+        + f'<div class="list">{"".join(row(p) for p in by[c["key"]])}</div></section>' for c in cats)
 
     fill = {
-        "INTRO": t("On-policy distillation lets an agent learn from its own rollouts while a teacher corrects them. "
-                   "This page tracks agentic OPD work: click any paper for a four-point summary.",
-                   "在策略蒸馏（OPD）让智能体在自己生成的轨迹上学习，由教师给出纠正信号。本页追踪 Agentic OPD 工作，点击任意论文查看四点速览。"),
+        "INTRO": t("This collection requires both an interactive agent task and an on-policy distillation objective. "
+                   "The agent executes actions through tools, software, or physical/simulated environments and uses returned feedback. "
+                   "Static multimodal QA and screenshot grounding alone are outside scope. "
+                   "Offline training contexts are allowed when the resulting policy is evaluated in closed-loop interaction. "
+                   "Click any paper for its method and interaction setting.",
+                   "本清单同时要求智能体交互任务和在策略蒸馏目标：智能体通过工具、软件或物理/仿真环境执行动作，并利用返回的反馈继续决策。"
+                   "仅有静态多模态问答或截图定位不予收录。使用离线上下文训练、但在闭环交互中评测的策略仍可收录。点击论文查看方法与交互设置。"),
         "TOTAL": str(total), "NCODE": str(ncode), "UPDATED": esc(updated), "REPO": REPO,
         "L_PAPERS": t("papers", "篇论文"), "L_CODE": t("with code", "篇有代码"),
         "L_UPDATED": t("updated", "更新于"), "L_ONLYCODE": t("With code", "仅看有代码"),
