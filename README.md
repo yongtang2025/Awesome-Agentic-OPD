@@ -32,6 +32,8 @@ See the [scope audit](ccfa-workfiles/checks/agentic-scope/scope-audit.md) for pa
 
 Search, filter and read a four-point summary of every paper in the **[interactive reader](https://yongtang2025.github.io/Awesome-Agentic-OPD/)** ([mirror](https://htmlpreview.github.io/?https://github.com/yongtang2025/Awesome-Agentic-OPD/blob/main/index.html)).
 
+> **With gratitude and respect to [Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).** We acknowledge its foundational contribution to organizing the multimodal on-policy distillation literature. If you want to understand the **Multimodal OPD field as a whole**, please visit [Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).
+
 ## 🔥 Most starred
 
 | # | Paper | Domain | Affiliation | Code |
