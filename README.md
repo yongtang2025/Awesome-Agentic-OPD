@@ -6,11 +6,11 @@
   <a href="https://yongtang2025.github.io/Awesome-Agentic-OPD/"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>
   <img src="https://img.shields.io/badge/papers-100-4E6813?style=flat-square" alt="papers">
   <img src="https://img.shields.io/badge/with_code-33-2E86C1?style=flat-square" alt="with code">
-  <img src="https://img.shields.io/badge/updated-2026.10.22-purple?style=flat-square" alt="updated">
+  <img src="https://img.shields.io/badge/updated-2026.10.23-purple?style=flat-square" alt="updated">
 </p>
 
 <p align="center">
-  <a href="#llm-agentic-opd">LLM (78)</a> · <a href="#multimodal-agentic-opd">Multimodal (9)</a> · <a href="#video-agentic-opd">Video (0)</a> · <a href="#audio-agentic-opd">Audio (0)</a> · <a href="#omni-agentic-opd">Omni (0)</a> · <a href="#embodied-agentic-opd">Embodied (12)</a> · <a href="#ags-opd">AGS (1)</a>
+  <a href="#llm-agentic-opd">LLM (78)</a> · <a href="#multimodal-agentic-opd">Multimodal (9)</a> · <a href="#omni-agentic-opd">Omni (0)</a> · <a href="#embodied-agentic-opd">Embodied (12)</a> · <a href="#video-agentic-opd">Video (0)</a> · <a href="#audio-agentic-opd">Audio (0)</a> · <a href="#ags-opd">AGS (1)</a>
 </p>
 
 > **On-policy distillation (OPD)** — the student learns from *its own* rollouts `y ~ π_student(·|x)`, while a teacher scores or corrects those student-generated samples. **OPSD** is the self-distillation case: the teacher is the same model, given privileged information.
@@ -36,10 +36,10 @@ Search, filter and read a four-point summary of every paper in the **[interactiv
 
 | # | Paper | Domain | Affiliation | Code |
 | :-: | :-- | :-- | :-- | :-: |
-| 1 | [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) | LLM | — | [⭐ 372](https://github.com/ZJU-REAL/SDAR) |
-| 2 | [RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.20784) | LLM | — | [⭐ 372](https://github.com/ZJU-REAL/SDAR) |
+| 1 | [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) | LLM | — | [⭐ 373](https://github.com/ZJU-REAL/SDAR) |
+| 2 | [RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.20784) | LLM | — | [⭐ 373](https://github.com/ZJU-REAL/SDAR) |
 | 3 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | LLM | — | [⭐ 298](https://github.com/jinyangwu/SEED) |
-| 4 | [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | LLM | — | [⭐ 155](https://github.com/YoungZ365/SOD) |
+| 4 | [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | LLM | — | [⭐ 156](https://github.com/YoungZ365/SOD) |
 | 5 | [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | LLM | — | [⭐ 127](https://github.com/jinyangwu/OPID) |
 | 6 | [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/abs/2604.24005) | LLM | — | [⭐ 115](https://github.com/kokolerk/TCOD) |
 | 7 | [AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.05987) | LLM | — | [⭐ 87](https://github.com/ZethWang/AgentOPSD) |
@@ -53,11 +53,11 @@ On-policy distillation for language-model agents that execute tools, operate ext
 
 | Paper | Affiliation | Date | Code | Cited |
 | :-- | :-- | :-: | :-: | :-: |
-| [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) | — | 2026-05-14 | [⭐ 372](https://github.com/ZJU-REAL/SDAR) | 58 |
-| [RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.20784) | — | 2026-09-17 | [⭐ 372](https://github.com/ZJU-REAL/SDAR) | 4 |
-| [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | — | 2026-07-16 | [⭐ 298](https://github.com/jinyangwu/SEED) | 40 |
-| [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | — | 2026-05-08 | [⭐ 155](https://github.com/YoungZ365/SOD) | 26 |
-| [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | — | 2026-06-25 | [⭐ 127](https://github.com/jinyangwu/OPID) | 37 |
+| [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) | — | 2026-05-14 | [⭐ 373](https://github.com/ZJU-REAL/SDAR) | 59 |
+| [RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.20784) | — | 2026-09-17 | [⭐ 373](https://github.com/ZJU-REAL/SDAR) | 4 |
+| [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | — | 2026-07-16 | [⭐ 298](https://github.com/jinyangwu/SEED) | 41 |
+| [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | — | 2026-05-08 | [⭐ 156](https://github.com/YoungZ365/SOD) | 26 |
+| [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | — | 2026-06-25 | [⭐ 127](https://github.com/jinyangwu/OPID) | 38 |
 | [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/abs/2604.24005) | — | 2026-04-27 | [⭐ 115](https://github.com/kokolerk/TCOD) | 52 |
 | [AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.05987) | — | 2026-08-06 | [⭐ 87](https://github.com/ZethWang/AgentOPSD) | 13 |
 | [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](https://arxiv.org/abs/2607.24280) | — | 2026-07-27 | [⭐ 44](https://github.com/AaronLiu0702/MAPD) | 9 |
@@ -65,8 +65,8 @@ On-policy distillation for language-model agents that execute tools, operate ext
 | [UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation](https://arxiv.org/abs/2606.29502) | — | 2026-06-28 | [⭐ 34](https://github.com/TU2021/UCOB) | 15 |
 | [Look Ahead Before You Distill: Future Trajectory Validation of Teacher Guidance for Agentic On-Policy Distillation](https://arxiv.org/abs/2608.01953) | — | 2026-08-03 | [⭐ 27](https://github.com/ChenChiShui/FutureBridge-OPD) | 12 |
 | [ATOD: Annealed Turn-Aware On-Policy Distillation for Multi-Turn Agentic Tasks](https://arxiv.org/abs/2606.27814) | — | 2026-06-26 | [⭐ 21](https://github.com/TanQitai/ATOD) | 11 |
-| [Group-Reflective Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.28076) | — | 2026-07-30 | [⭐ 21](https://github.com/BinbZheng1/GRSD) | 6 |
-| [SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation](https://arxiv.org/abs/2608.21500) | — | 2026-08-21 | [⭐ 11](https://github.com/pppyb/SecOPD) | 6 |
+| [Group-Reflective Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.28076) | — | 2026-07-30 | [⭐ 21](https://github.com/BinbZheng1/GRSD) | 7 |
+| [SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation](https://arxiv.org/abs/2608.21500) | — | 2026-08-21 | [⭐ 12](https://github.com/pppyb/SecOPD) | 6 |
 | [Agentic Reinforcement Learning with Observation-Calibrated Self-Distillation](https://arxiv.org/abs/2608.04788) | — | 2026-08-05 | [⭐ 9](https://github.com/yiy1x/OCSD) | 7 |
 | [DASH-OPD: Discrepancy-Aware Switching with Hysteresis for On-Policy Distillation](https://arxiv.org/abs/2607.29078) | — | 2026-07-31 | [⭐ 7](https://github.com/Lucian1115/DASH-OPD) | 4 |
 | [Agentic Reinforcement Learning with Self-Distilled Reward Shaping](https://arxiv.org/abs/2608.03223) | — | 2026-08-04 | [⭐ 7](https://github.com/gitrxh/ADRS-arxiv) | 3 |
@@ -132,7 +132,7 @@ On-policy distillation for language-model agents that execute tools, operate ext
 | [StepOPSD: Step-Aware Online Preference Self-Distillation for Agent Reinforcement Learning](https://arxiv.org/abs/2605.27140) | — | 2026-05-26 | — | 15 |
 | [SD-Search: On-Policy Hindsight Self-Distillation for Search-Augmented Reasoning](https://arxiv.org/abs/2605.18299) | Kuaishou | 2026-05-18 | — | 8 |
 | [f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control](https://arxiv.org/abs/2605.17862) | — | 2026-05-18 | — | 6 |
-| [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/abs/2604.10674) | vivo AI Lab; Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences; University of Science and Technology of China; The Chinese University of Hong Kong; University of Chinese Academy of Sciences | 2026-04-12 | — | 96 |
+| [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/abs/2604.10674) | vivo AI Lab; Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences; University of Science and Technology of China; The Chinese University of Hong Kong; University of Chinese Academy of Sciences | 2026-04-12 | — | 97 |
 | [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/abs/2603.25562) | — | 2026-03-26 | — | 151 |
 | [Online Experiential Learning for Language Models](https://arxiv.org/abs/2603.16856) | Microsoft Research | 2026-03-17 | — | 26 |
 | [On-Policy Context Distillation for Language Models](https://arxiv.org/abs/2602.12275) | Microsoft Research | 2026-02-12 | — | 194 |
@@ -164,24 +164,6 @@ On-policy distillation for multimodal agents with action-observation loops, incl
 
 </details>
 
-<h2 id="video-agentic-opd">🎬 Video Agentic OPD</h2>
-
-On-policy distillation for agents that act on video tools or video-based environments and use the resulting observations; static video QA and temporal grounding alone are excluded. **0 papers**, 0 with code.
-
-No papers currently listed meet both the interaction and distillation criteria.
-
-| Paper | Affiliation | Date | Code | Cited |
-| :-- | :-- | :-: | :-: | :-: |
-
-<h2 id="audio-agentic-opd">🔊 Audio Agentic OPD</h2>
-
-On-policy distillation for agents in interactive speech, audio-tool or audio-environment tasks; fixed-input ASR, audio QA and affect recognition alone are excluded. **0 papers**, 0 with code.
-
-No papers currently listed meet both the interaction and distillation criteria.
-
-| Paper | Affiliation | Date | Code | Cited |
-| :-- | :-- | :-: | :-: | :-: |
-
 <h2 id="omni-agentic-opd">🌐 Omni Agentic OPD</h2>
 
 On-policy distillation for omni-modal agents that jointly perceive and act across text, vision, audio and other modalities, including omni-modal tool calling, cross-modal tool results and multi-turn agent interaction. **0 papers**, 0 with code.
@@ -197,7 +179,7 @@ On-policy distillation of policies evaluated through closed-loop robot, driving 
 
 | Paper | Affiliation | Date | Code | Cited |
 | :-- | :-- | :-: | :-: | :-: |
-| [Refined Policy Distillation: From VLA Generalists to RL Experts](https://arxiv.org/abs/2503.05833) | University of Technology Nuremberg | 2025-03-06 | [⭐ 24](https://github.com/Refined-Policy-Distillation/RPD) | 32 |
+| [Refined Policy Distillation: From VLA Generalists to RL Experts](https://arxiv.org/abs/2503.05833) | University of Technology Nuremberg | 2025-03-06 | [⭐ 23](https://github.com/Refined-Policy-Distillation/RPD) | 32 |
 
 <details>
 <summary>📄 11 more without public code (newest first)</summary>
@@ -218,6 +200,24 @@ On-policy distillation of policies evaluated through closed-loop robot, driving 
 
 </details>
 
+<h2 id="video-agentic-opd">🎬 Video Agentic OPD</h2>
+
+On-policy distillation for agents that act on video tools or video-based environments and use the resulting observations; static video QA and temporal grounding alone are excluded. **0 papers**, 0 with code.
+
+No papers currently listed meet both the interaction and distillation criteria.
+
+| Paper | Affiliation | Date | Code | Cited |
+| :-- | :-- | :-: | :-: | :-: |
+
+<h2 id="audio-agentic-opd">🔊 Audio Agentic OPD</h2>
+
+On-policy distillation for agents in interactive speech, audio-tool or audio-environment tasks; fixed-input ASR, audio QA and affect recognition alone are excluded. **0 papers**, 0 with code.
+
+No papers currently listed meet both the interaction and distillation criteria.
+
+| Paper | Affiliation | Date | Code | Cited |
+| :-- | :-- | :-: | :-: | :-: |
+
 <h2 id="ags-opd">🎨 Agentic Generative Systems (AGS) OPD</h2>
 
 On-policy distillation for Agentic Generative Systems that plan toward goals, execute generation tools and refine outputs from feedback; generic iterative diffusion distillation is excluded. **1 paper**, 0 with code.
@@ -233,12 +233,14 @@ On-policy distillation for Agentic Generative Systems that plan toward goals, ex
 
 ## Contributing
 
-Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-10-22 09:53 UTC).
-
-## Acknowledgments
-
-**With gratitude and respect to [Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).** We acknowledge its foundational contribution to organizing the multimodal on-policy distillation literature. If you are interested in **Multimodal OPD**, please visit [Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).
+Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-10-23 08:37 UTC).
 
 ## License
 
 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) — public-domain dedication.
+
+## Acknowledgments
+
+> **With gratitude and respect to [Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).** We acknowledge its foundational contribution to organizing the multimodal on-policy distillation literature. If you want to understand the **Multimodal OPD field as a whole**, please visit [Awesome-Multimodal-OPD](https://github.com/Jingchensun/Awesome-Multimodal-OPD).
+
+Summaries are paraphrased from abstracts and may contain errors — the papers are the reference.
