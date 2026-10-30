@@ -6,7 +6,7 @@
   <a href="https://yongtang2025.github.io/Awesome-Agentic-OPD/"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>
   <img src="https://img.shields.io/badge/papers-100-4E6813?style=flat-square" alt="papers">
   <img src="https://img.shields.io/badge/with_code-33-2E86C1?style=flat-square" alt="with code">
-  <img src="https://img.shields.io/badge/updated-2026.10.29-purple?style=flat-square" alt="updated">
+  <img src="https://img.shields.io/badge/updated-2026.10.30-purple?style=flat-square" alt="updated">
 </p>
 
 <p align="center">
@@ -40,9 +40,9 @@ Search, filter and read a four-point summary of every paper in the **[interactiv
 | 2 | [RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.20784) | LLM | — | [⭐ 376](https://github.com/ZJU-REAL/SDAR) |
 | 3 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | LLM | — | [⭐ 304](https://github.com/jinyangwu/SEED) |
 | 4 | [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | LLM | — | [⭐ 166](https://github.com/YoungZ365/SOD) |
-| 5 | [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | LLM | — | [⭐ 127](https://github.com/jinyangwu/OPID) |
-| 6 | [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/abs/2604.24005) | LLM | — | [⭐ 116](https://github.com/kokolerk/TCOD) |
-| 7 | [AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.05987) | LLM | — | [⭐ 87](https://github.com/ZethWang/AgentOPSD) |
+| 5 | [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | LLM | — | [⭐ 128](https://github.com/jinyangwu/OPID) |
+| 6 | [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/abs/2604.24005) | LLM | — | [⭐ 115](https://github.com/kokolerk/TCOD) |
+| 7 | [AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.05987) | LLM | — | [⭐ 86](https://github.com/ZethWang/AgentOPSD) |
 | 8 | [UI-MOPD: Multi-Platform On-Policy Distillation for Unified GUI Agents](https://arxiv.org/abs/2607.04425) | Multimodal | Tsinghua University | [⭐ 62](https://github.com/EliSpectre/UI-MOPD) |
 | 9 | [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](https://arxiv.org/abs/2607.24280) | LLM | — | [⭐ 44](https://github.com/AaronLiu0702/MAPD) |
 | 10 | [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](https://arxiv.org/abs/2605.01347) | LLM | Huazhong University of Science and Technology; Alibaba Group | [⭐ 38](https://github.com/chiefovoavicii/MAD-OPD) |
@@ -55,15 +55,15 @@ On-policy distillation for language-model agents that execute tools, operate ext
 | :-- | :-- | :-: | :-: | :-: |
 | [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) | — | 2026-05-14 | [⭐ 376](https://github.com/ZJU-REAL/SDAR) | 60 |
 | [RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.20784) | — | 2026-09-17 | [⭐ 376](https://github.com/ZJU-REAL/SDAR) | 4 |
-| [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | — | 2026-07-16 | [⭐ 304](https://github.com/jinyangwu/SEED) | 42 |
+| [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | — | 2026-07-16 | [⭐ 304](https://github.com/jinyangwu/SEED) | 43 |
 | [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | — | 2026-05-08 | [⭐ 166](https://github.com/YoungZ365/SOD) | 26 |
-| [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | — | 2026-06-25 | [⭐ 127](https://github.com/jinyangwu/OPID) | 38 |
-| [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/abs/2604.24005) | — | 2026-04-27 | [⭐ 116](https://github.com/kokolerk/TCOD) | 55 |
-| [AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.05987) | — | 2026-08-06 | [⭐ 87](https://github.com/ZethWang/AgentOPSD) | 13 |
+| [OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2606.26790) | — | 2026-06-25 | [⭐ 128](https://github.com/jinyangwu/OPID) | 38 |
+| [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/abs/2604.24005) | — | 2026-04-27 | [⭐ 115](https://github.com/kokolerk/TCOD) | 55 |
+| [AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.05987) | — | 2026-08-06 | [⭐ 86](https://github.com/ZethWang/AgentOPSD) | 13 |
 | [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](https://arxiv.org/abs/2607.24280) | — | 2026-07-27 | [⭐ 44](https://github.com/AaronLiu0702/MAPD) | 9 |
 | [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](https://arxiv.org/abs/2605.01347) | Huazhong University of Science and Technology; Alibaba Group | 2026-05-02 | [⭐ 38](https://github.com/chiefovoavicii/MAD-OPD) | 18 |
 | [UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation](https://arxiv.org/abs/2606.29502) | — | 2026-06-28 | [⭐ 34](https://github.com/TU2021/UCOB) | 15 |
-| [Look Ahead Before You Distill: Future Trajectory Validation of Teacher Guidance for Agentic On-Policy Distillation](https://arxiv.org/abs/2608.01953) | — | 2026-08-03 | [⭐ 27](https://github.com/ChenChiShui/FutureBridge-OPD) | 14 |
+| [Look Ahead Before You Distill: Future Trajectory Validation of Teacher Guidance for Agentic On-Policy Distillation](https://arxiv.org/abs/2608.01953) | — | 2026-08-03 | [⭐ 26](https://github.com/ChenChiShui/FutureBridge-OPD) | 14 |
 | [ATOD: Annealed Turn-Aware On-Policy Distillation for Multi-Turn Agentic Tasks](https://arxiv.org/abs/2606.27814) | — | 2026-06-26 | [⭐ 21](https://github.com/TanQitai/ATOD) | 11 |
 | [Group-Reflective Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.28076) | — | 2026-07-30 | [⭐ 21](https://github.com/BinbZheng1/GRSD) | 7 |
 | [SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation](https://arxiv.org/abs/2608.21500) | — | 2026-08-21 | [⭐ 15](https://github.com/pppyb/SecOPD) | 7 |
@@ -179,7 +179,7 @@ On-policy distillation of policies evaluated through closed-loop robot, driving 
 
 | Paper | Affiliation | Date | Code | Cited |
 | :-- | :-- | :-: | :-: | :-: |
-| [Refined Policy Distillation: From VLA Generalists to RL Experts](https://arxiv.org/abs/2503.05833) | University of Technology Nuremberg | 2025-03-06 | [⭐ 23](https://github.com/Refined-Policy-Distillation/RPD) | 32 |
+| [Refined Policy Distillation: From VLA Generalists to RL Experts](https://arxiv.org/abs/2503.05833) | University of Technology Nuremberg | 2025-03-06 | [⭐ 24](https://github.com/Refined-Policy-Distillation/RPD) | 32 |
 
 <details>
 <summary>📄 11 more without public code (newest first)</summary>
@@ -233,7 +233,7 @@ On-policy distillation for Agentic Generative Systems that plan toward goals, ex
 
 ## Contributing
 
-Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-10-29 10:03 UTC).
+Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-10-30 10:07 UTC).
 
 ## License
 
