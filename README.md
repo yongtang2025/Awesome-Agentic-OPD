@@ -6,7 +6,7 @@
   <a href="https://yongtang2025.github.io/Awesome-Agentic-OPD/"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>
   <img src="https://img.shields.io/badge/papers-100-4E6813?style=flat-square" alt="papers">
   <img src="https://img.shields.io/badge/with_code-33-2E86C1?style=flat-square" alt="with code">
-  <img src="https://img.shields.io/badge/updated-2026.11.08-purple?style=flat-square" alt="updated">
+  <img src="https://img.shields.io/badge/updated-2026.11.09-purple?style=flat-square" alt="updated">
 </p>
 
 <p align="center">
@@ -75,11 +75,11 @@ On-policy distillation for language-model agents that execute tools, operate ext
 | [Beyond Timestamps: Decision-Aligned On-Policy Distillation for Long-Horizon Agents](https://arxiv.org/abs/2609.33391) | — | 2026-09-27 | [⭐ 4](https://github.com/mingju-c/Align-OPSD) | 3 |
 | [When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents](https://arxiv.org/abs/2608.05219) | — | 2026-08-05 | [⭐ 3](https://github.com/liujunzhuo/SMRC-SD) | 6 |
 | [From Scoring to Acting: Outcome-Verified Comparative Self-Distillation for LLM Agents](https://arxiv.org/abs/2607.27937) | — | 2026-07-30 | [⭐ 3](https://github.com/shane990928-xia/OVCSD) | 4 |
-| [Beyond the Teacher: Understanding and Preserving Distillation Overshoot in Agentic On-Policy Distillation](https://arxiv.org/abs/2610.25034) | University of Southern California; University of Florida; Emory University; University of Alabama; University of Maryland; Amazon AGI; Boston University; The Ohio State University; National Taiwan University | 2026-10-18 | [⭐ 2](https://github.com/Jike338/SPOD) | 0 |
+| [Beyond the Teacher: Understanding and Preserving Distillation Overshoot in Agentic On-Policy Distillation](https://arxiv.org/abs/2610.25034) | University of Southern California; University of Florida; Emory University; University of Alabama; University of Maryland; Amazon AGI; Boston University; The Ohio State University; National Taiwan University | 2026-10-18 | [⭐ 3](https://github.com/Jike338/SPOD) | 0 |
 | [UniOPSD: Unifying Outcome and Hindsight Feedback for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.34810) | — | 2026-09-28 | [⭐ 2](https://github.com/Zenghuang-Fu/Uniopsd) | 0 |
 | [PR-OPD: Privileged Representation On-policy Self-Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2609.36642) | — | 2026-09-29 | [⭐ 1](https://github.com/balibata/PR-OPD) | 1 |
+| [DivOPD: Spread Wide, Look Close for Asynchronous On-Policy Distillation of Multi-turn Agents](https://arxiv.org/abs/2609.34838) | University of Chicago; Meituan; University of Chinese Academy of Sciences; HKUST (GZ) | 2026-09-28 | [⭐ 1](https://github.com/HanyangWang0418-oss/DivOPD) | 1 |
 | [Trust Is Not Enough: Influence Calibration for On-Policy Self-Distillation in Agentic RL](https://arxiv.org/abs/2608.14945) | — | 2026-08-14 | [⭐ 0](https://github.com/lanqz7766/Influence-Calibration-for-On-Policy-Self-Distillation-in-Agentic-RL) | 9 |
-| [DivOPD: Spread Wide, Look Close for Asynchronous On-Policy Distillation of Multi-turn Agents](https://arxiv.org/abs/2609.34838) | University of Chicago; Meituan; University of Chinese Academy of Sciences; HKUST (GZ) | 2026-09-28 | [⭐ 0](https://github.com/HanyangWang0418-oss/DivOPD) | 1 |
 | [GraphOPD: Graph-Augmented On-Policy Distillation for LLM Agents](https://arxiv.org/abs/2610.08959) | University of Science and Technology of China; Xiaohongshu; HKUST (GZ) | 2026-10-06 | [⭐ 0](https://github.com/BoHan-LIN04/GraphOPD) | 0 |
 | [SERL-SQL: Selective Hindsight Distillation for Text-to-SQL Reinforcement Agentic Learning](https://arxiv.org/abs/2608.00485) | — | 2026-08-01 | [Code](https://github.com/Ffunkytao/SERL-SQL) | 1 |
 
@@ -133,9 +133,9 @@ On-policy distillation for language-model agents that execute tools, operate ext
 | [SD-Search: On-Policy Hindsight Self-Distillation for Search-Augmented Reasoning](https://arxiv.org/abs/2605.18299) | Kuaishou | 2026-05-18 | — | 9 |
 | [f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control](https://arxiv.org/abs/2605.17862) | — | 2026-05-18 | — | 7 |
 | [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/abs/2604.10674) | vivo AI Lab; Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences; University of Science and Technology of China; The Chinese University of Hong Kong; University of Chinese Academy of Sciences | 2026-04-12 | — | 106 |
-| [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/abs/2603.25562) | — | 2026-03-26 | — | 167 |
+| [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/abs/2603.25562) | — | 2026-03-26 | — | 168 |
 | [Online Experiential Learning for Language Models](https://arxiv.org/abs/2603.16856) | Microsoft Research | 2026-03-17 | — | 28 |
-| [On-Policy Context Distillation for Language Models](https://arxiv.org/abs/2602.12275) | Microsoft Research | 2026-02-12 | — | 207 |
+| [On-Policy Context Distillation for Language Models](https://arxiv.org/abs/2602.12275) | Microsoft Research | 2026-02-12 | — | 206 |
 | [OVD: On-policy Verbal Distillation](https://arxiv.org/abs/2601.21968) | — | 2026-01-29 | — | 9 |
 
 </details>
@@ -233,7 +233,7 @@ On-policy distillation for Agentic Generative Systems that plan toward goals, ex
 
 ## Contributing
 
-Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-11-08 10:28 UTC).
+Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-11-09 11:39 UTC).
 
 ## License
 
