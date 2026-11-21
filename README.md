@@ -6,7 +6,7 @@
   <a href="https://yongtang2025.github.io/Awesome-Agentic-OPD/"><img src="https://img.shields.io/badge/Interactive_reader-EN_%2F_%E4%B8%AD%E6%96%87-1f6feb?style=flat-square" alt="Interactive reader"></a>
   <img src="https://img.shields.io/badge/papers-100-4E6813?style=flat-square" alt="papers">
   <img src="https://img.shields.io/badge/with_code-33-2E86C1?style=flat-square" alt="with code">
-  <img src="https://img.shields.io/badge/updated-2026.11.20-purple?style=flat-square" alt="updated">
+  <img src="https://img.shields.io/badge/updated-2026.11.21-purple?style=flat-square" alt="updated">
 </p>
 
 <p align="center">
@@ -126,13 +126,13 @@ On-policy distillation for language-model agents that execute tools, operate ext
 | [CRAFT: Counterfactual Credit Assignment from Free Sibling Rollouts for Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2606.29476) | — | 2026-06-28 | — | 10 |
 | [SAGE-OPD: Selective Agent-Guided Intervention for Multi-Turn On-Policy Distillation](https://arxiv.org/abs/2606.19659) | — | 2026-06-17 | — | 22 |
 | [OPD-Evolver: Cultivating Holistic Agent Evolver via On-Policy Distillation](https://arxiv.org/abs/2606.17628) | — | 2026-06-16 | — | 6 |
-| [On-Policy Distillation with Curriculum Turn-level Guidance for Multi-turn Agents](https://arxiv.org/abs/2606.15912) | — | 2026-06-14 | — | 43 |
+| [On-Policy Distillation with Curriculum Turn-level Guidance for Multi-turn Agents](https://arxiv.org/abs/2606.15912) | — | 2026-06-14 | — | 44 |
 | [Keep Policy Gradient in Charge: Sibling-Guided Credit Distillation for Long-Horizon Tool-Use Agents](https://arxiv.org/abs/2606.12634) | — | 2026-06-10 | — | 8 |
 | [GAPD: Gold-Action Policy Distillation for Agentic Reinforcement Learning in Knowledge Base Question Answering](https://arxiv.org/abs/2605.29584) | — | 2026-05-28 | — | 3 |
 | [StepOPSD: Step-Aware Online Preference Self-Distillation for Agent Reinforcement Learning](https://arxiv.org/abs/2605.27140) | — | 2026-05-26 | — | 17 |
 | [SD-Search: On-Policy Hindsight Self-Distillation for Search-Augmented Reasoning](https://arxiv.org/abs/2605.18299) | Kuaishou | 2026-05-18 | — | 9 |
 | [f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control](https://arxiv.org/abs/2605.17862) | — | 2026-05-18 | — | 9 |
-| [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/abs/2604.10674) | vivo AI Lab; Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences; University of Science and Technology of China; The Chinese University of Hong Kong; University of Chinese Academy of Sciences | 2026-04-12 | — | 109 |
+| [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/abs/2604.10674) | vivo AI Lab; Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences; University of Science and Technology of China; The Chinese University of Hong Kong; University of Chinese Academy of Sciences | 2026-04-12 | — | 110 |
 | [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/abs/2603.25562) | — | 2026-03-26 | — | 172 |
 | [Online Experiential Learning for Language Models](https://arxiv.org/abs/2603.16856) | Microsoft Research | 2026-03-17 | — | 30 |
 | [On-Policy Context Distillation for Language Models](https://arxiv.org/abs/2602.12275) | Microsoft Research | 2026-02-12 | — | 217 |
@@ -148,7 +148,7 @@ On-policy distillation for multimodal agents with action-observation loops, incl
 | :-- | :-- | :-: | :-: | :-: |
 | [UI-MOPD: Multi-Platform On-Policy Distillation for Unified GUI Agents](https://arxiv.org/abs/2607.04425) | Tsinghua University | 2026-07-05 | [⭐ 62](https://github.com/EliSpectre/UI-MOPD) | 10 |
 | [On-Policy Visual Evidence Distillation](https://arxiv.org/abs/2609.36838) | — | 2026-09-29 | [⭐ 3](https://github.com/sylvain-wei/ReVuE) | 0 |
-| [VISTA: Internalizing Collective Visual Experience via On-Policy Distillation for Active Multimodal Agents](https://arxiv.org/abs/2609.38086) | Tsinghua University | 2026-09-29 | [⭐ 1](https://github.com/jiangz20/VISTA) | 0 |
+| [VISTA: Internalizing Collective Visual Experience via On-Policy Distillation for Active Multimodal Agents](https://arxiv.org/abs/2609.38086) | Tsinghua University | 2026-09-29 | [⭐ 1](https://github.com/jiangz20/VISTA) | 1 |
 
 <details>
 <summary>📄 6 more without public code (newest first)</summary>
@@ -159,7 +159,7 @@ On-policy distillation for multimodal agents with action-observation loops, incl
 | [ECHOES: Seeing Beyond the Current Image via Recursive History Compression and Privileged On-Policy Distillation](https://arxiv.org/abs/2610.22408) | Tsinghua University; StepFun; Nanyang Technological University; Leapmotor; Honor | 2026-10-14 | — | 0 |
 | [Information-Gain Calibrated On-Policy Distillation for Deep Search Agents](https://arxiv.org/abs/2610.20664) | The Chinese University of Hong Kong, Shenzhen; Renmin University of China; Beijing University of Posts and Telecommunications; BAAI | 2026-10-14 | — | 0 |
 | [PIVOT: Pivot-Aware On Policy Self Distillation for Multi-Turn VLM Agents](https://arxiv.org/abs/2609.35303) | HKUST (GZ); IDEA; The Hong Kong Polytechnic University; Nanyang Technological University; Tsinghua University | 2026-09-28 | — | 0 |
-| [Learn How to Act from Your Own Interactions: On-Policy Self-Distillation for GUI Agents](https://arxiv.org/abs/2609.27307) | Tsinghua University; Tencent; Chinese Academy of Sciences; Institute of Information Engineering; Nankai University | 2026-09-23 | — | 1 |
+| [Learn How to Act from Your Own Interactions: On-Policy Self-Distillation for GUI Agents](https://arxiv.org/abs/2609.27307) | Tsinghua University; Tencent; Chinese Academy of Sciences; Institute of Information Engineering; Nankai University | 2026-09-23 | — | 2 |
 | [The Next Screenshot Knows: Gated Hindsight Distillation for Mobile GUI Agents](https://arxiv.org/abs/2608.06065) | University of Electronic Science and Technology of China | 2026-08-06 | — | 2 |
 
 </details>
@@ -233,7 +233,7 @@ On-policy distillation for Agentic Generative Systems that plan toward goals, ex
 
 ## Contributing
 
-Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-11-20 11:46 UTC).
+Add an entry to [`papers.json`](papers.json) and open a PR. `README.md` and `index.html` are generated by [`scripts/update_stats.py`](scripts/update_stats.py), so please do not edit them by hand. Stars come from the GitHub API and citations from Semantic Scholar, refreshed daily by [a GitHub Action](.github/workflows/refresh.yml) (last run: 2026-11-21 11:11 UTC).
 
 ## License
 
